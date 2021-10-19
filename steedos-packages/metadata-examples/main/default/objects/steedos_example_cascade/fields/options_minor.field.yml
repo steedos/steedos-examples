@@ -1,5 +1,5 @@
 name: options_minor
-label: 副记录
+label: 数据
 type: lookup
 group: Options Function 方式
 sort_no: 320

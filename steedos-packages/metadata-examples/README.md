@@ -1,4 +1,8 @@
-# @steedos/examples
+# @steedos/metadata-examples
+
+### 数据准备
+- 请先添加 级联示例数据类型、级联示例数据 的基础数据
+- 再访问级联示例对象
 
 ## 级联字段
 

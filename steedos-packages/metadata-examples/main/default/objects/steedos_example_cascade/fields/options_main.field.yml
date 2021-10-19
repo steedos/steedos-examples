@@ -1,0 +1,6 @@
+name: options_main
+label: 主记录
+type: lookup
+reference_to: steedos_example_cascade_data_type
+group: Options Function 方式
+sort_no: 310

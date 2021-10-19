@@ -1,0 +1,5 @@
+name: name
+label: 名称
+type: autonumber
+formula: "{YYYY}-{0000}"
+sort_no: 100

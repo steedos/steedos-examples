@@ -1,0 +1,5 @@
+name: steedos_example_cascade_data
+label: 级联示例数据
+icon: task
+version: 2
+enable_enhanced_lookup: false

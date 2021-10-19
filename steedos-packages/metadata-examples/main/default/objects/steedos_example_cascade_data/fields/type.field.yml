@@ -1,0 +1,4 @@
+name: type
+label: 类型
+type: lookup
+reference_to: steedos_example_cascade_data_type

@@ -1,0 +1,6 @@
+name: expression_main
+label: 数据类型
+type: lookup
+reference_to: steedos_example_cascade_data_type
+group: Expression 方式
+sort_no: 410

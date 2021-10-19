@@ -1,0 +1,22 @@
+name: options_minor
+label: 副记录
+type: lookup
+group: Options Function 方式
+sort_no: 320
+depend_on:
+  - options_main
+optionsFunction: !!js/function |
+  function (formValues){
+    var options = [];
+    var params = '';
+    if(formValues.options_main){
+      params = `?$filter=(type eq '${formValues.options_main}')`
+    }else{
+      params = `?$filter=(_id eq '-1')`
+    }
+    var data = Steedos.authRequest(`/api/v4/steedos_example_cascade_data${params}`, {async: false});
+    data.value.forEach(function(item){
+      options.push({label: item.name, value: item._id})
+    })
+    return options
+  }

@@ -1,0 +1,18 @@
+name: 示例
+code: examples
+icon_slds: contract_line_item
+is_creator: true
+is_new_window: false
+is_use_ie: false
+is_use_iframe: false
+mobile: true
+mobile_objects:
+  - steedos_example_cascade
+  - steedos_example_cascade_data
+  - steedos_example_cascade_data_type
+objects:
+  - steedos_example_cascade
+  - steedos_example_cascade_data
+  - steedos_example_cascade_data_type
+sort: 1000
+visible: true

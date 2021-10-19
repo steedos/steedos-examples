@@ -1,0 +1,9 @@
+name: expression_minor
+label: 数据
+type: lookup
+reference_to: steedos_example_cascade_data
+depend_on:
+  - expression_main
+filters: "{{formData.expression_main ? \"(type eq '\" + formData.expression_main + \"')\" : '(_id eq -1)'}}"
+group: Expression 方式
+sort_no: 420

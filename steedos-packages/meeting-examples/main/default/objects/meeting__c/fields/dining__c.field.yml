@@ -1,0 +1,8 @@
+name: dining__c
+group: 会议任务
+label: 用餐
+sort_no: 220
+type: boolean
+visible_on: "{{
+  function(){return Steedos.authRequest('/api/include/leader', { type: 'post', async: false, data: JSON.stringify({users: formData.staff__c}) }).include}()
+}}"

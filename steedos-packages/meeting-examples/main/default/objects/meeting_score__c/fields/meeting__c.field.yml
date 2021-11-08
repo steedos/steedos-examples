@@ -1,0 +1,6 @@
+name: meeting__c
+label: 相关会议
+reference_to: meeting__c
+required: true
+sort_no: 130
+type: master_detail

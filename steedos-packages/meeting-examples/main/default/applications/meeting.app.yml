@@ -1,0 +1,25 @@
+name: 会议
+code: meeting
+description: 内部会议管理模块，包含内部、外部参会人员通知、外部停车安排审批、会议流程审批以及会后评分相关功能。
+icon_slds: answer_best
+is_creator: true
+is_new_window: false
+is_use_ie: false
+is_use_iframe: false
+mobile: true
+mobile_objects:
+  - meeting__c
+  - meeting_room__c
+  - meeting_participants__c
+  - tasks
+  - events
+  - instances
+objects:
+  - meeting__c
+  - meeting_room__c
+  - meeting_participants__c
+  - tasks
+  - events
+  - instances
+sort: 9100
+visible: true

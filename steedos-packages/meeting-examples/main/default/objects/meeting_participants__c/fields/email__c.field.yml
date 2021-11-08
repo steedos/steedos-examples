@@ -1,0 +1,5 @@
+name: email__c
+label: 邮箱
+required: true
+sort_no: 120
+type: email

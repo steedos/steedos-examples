@@ -1,0 +1,5 @@
+name: phone__c
+label: 手机号
+required: true
+sort_no: 120
+type: text

@@ -1,0 +1,5 @@
+name: meeting__c
+label: 会议
+reference_to: meeting__c
+sort_no: 160
+type: master_detail

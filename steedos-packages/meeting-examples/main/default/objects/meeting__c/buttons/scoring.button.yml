@@ -1,0 +1,5 @@
+name: scoring
+is_enable: true
+label: 会议评分
+'on': record_only
+visible: true

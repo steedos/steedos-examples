@@ -1,0 +1,5 @@
+name: parking_lot__c
+label: 车位信息
+omit: true
+sort_no: 160
+type: text

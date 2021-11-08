@@ -1,0 +1,10 @@
+name: is_support__c
+label: 是否需视频终端支持
+required: false
+sort_no: 190
+type: boolean
+depend_on:
+  - staff__c
+visible_on: "{{
+  function(){return Steedos.authRequest('/api/include/leader', { type: 'post', async: false, data: JSON.stringify({users: formData.staff__c}) }).include}()
+}}"

@@ -1,0 +1,33 @@
+name: all
+columns:
+  - field: name
+    _id: d400ab35-8325-4c30-bbf1-aa170b446ec0
+  - _id: 3a6fb767-9298-4004-85b8-36fdbf53f454
+    field: company__c
+  - _id: c8194748-6f39-4fc6-860d-9d6064c24725
+    field: phone__c
+  - _id: 6ca2c933-7ff2-4778-ac69-037c6700dc83
+    field: email__c
+  - _id: 7ee10e6d-16b8-44c6-98e5-d1319e5bbb7d
+    field: license__c
+  - _id: 3cbb1549-cd37-406a-8b06-a561e886d9c1
+    field: parking_lot__c
+  - _id: ebbfb9b1-f3ae-43fb-8428-e4a2b1f41c0f
+    field: meeting__c
+filter_scope: space
+filters: []
+label: 所有
+mobile_columns:
+  - _id: 10bb85b1-d2cb-449a-a166-6a4f04ae25d7
+    field: owner
+  - _id: 358c032c-8e2d-4fde-a39e-2b02e2a9fa5c
+    field: company__c
+  - _id: cdfbc298-1897-40a9-b6e3-2df28279b956
+    field: phone__c
+  - _id: 10d19763-a5b5-43c2-b88b-230c5ad3f9e8
+    field: meeting__c
+scrolling_mode: standard
+shared: true
+sort: []
+sort_no: 100
+type: grid

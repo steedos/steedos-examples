@@ -1,0 +1,9 @@
+name: name
+index: false
+is_name: true
+label: 说明
+required: true
+rows: 3
+searchable: true
+sort_no: 100
+type: textarea

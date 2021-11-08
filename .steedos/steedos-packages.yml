@@ -22,3 +22,9 @@ steedos-app-default:
   description: A Steedos App
   local: true
   path: steedos-packages/metadata-examples
+'@steedos/meeting-examples':
+  enable: true
+  version: 1.0.0
+  description: A Steedos App
+  local: true
+  path: steedos-packages/meeting-examples

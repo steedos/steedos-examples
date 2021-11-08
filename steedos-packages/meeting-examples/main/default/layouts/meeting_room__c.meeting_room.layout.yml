@@ -1,0 +1,43 @@
+name: meeting_room
+buttons:
+  - button_name: standard_new
+  - button_name: standard_edit
+  - button_name: standard_delete
+fields:
+  - field_name: owner
+  - field_name: name
+    is_required: true
+  - field_name: remark__c
+  - field_name: sort__c
+  - field_name: created
+    is_readonly: true
+  - field_name: created_by
+    is_readonly: true
+  - field_name: modified
+    is_readonly: true
+  - field_name: modified_by
+    is_readonly: true
+label: 会议室
+object_name: meeting_room__c
+profiles:
+  - admin
+  - user
+  - supplier
+  - customer
+related_lists:
+  - related_field_fullname: meeting__c.meeting_room__c
+    field_names:
+      - name
+      - type__c
+      - meeting_room__c
+      - start__c
+      - end__c
+      - status__c
+      - created_by
+      - created
+    label: 会议
+    sort_field_name:
+      - start__c
+    sort_order: desc
+    page_size: 5
+type: record

@@ -1,0 +1,4 @@
+name: approve
+is_enable: true
+label: 会议审批
+'on': record_only

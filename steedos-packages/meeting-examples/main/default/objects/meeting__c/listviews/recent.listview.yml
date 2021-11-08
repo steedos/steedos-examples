@@ -1,0 +1,37 @@
+name: recent
+columns:
+  - field: name
+    _id: fe5477cb-6497-4e4e-9f79-a5a309b0ccc0
+  - _id: 29bc2cf5-3396-49b5-b0b5-6006c1cf8daf
+    field: type__c
+  - _id: 166fb8e8-2349-4389-8614-8456b7c8084d
+    field: meeting_room__c
+  - _id: 27f7528c-b276-4bd6-bb8d-d311e6a0e5d7
+    field: start__c
+  - _id: 02e4c064-a74c-4b85-b7d6-dae2930e9b95
+    field: end__c
+  - _id: 382fc4e8-643c-4f12-bbad-a71af1c7ceb0
+    field: status__c
+  - _id: ffddd894-260c-45dd-a52e-0473a222f14c
+    field: created_by
+  - _id: 4b6c8f72-f673-4c4e-8349-f32fa0d634c5
+    field: created
+mobile_columns:
+  - _id: 934ee3e9-59ee-4086-88a5-e16e8d065837
+    field: name
+  - _id: a7b26c71-47e9-4679-8ccc-2cebbc30124c
+    field: meeting_room__c
+  - _id: 7a286b36-5bb4-48a6-995f-0eabfc5ab07e
+    field: type__c
+  - _id: fc3c5059-6b90-4f00-aea9-60175bd0be3d
+    field: start__c
+filter_scope: space
+filters: []
+label: 最近查看
+scrolling_mode: standard
+shared: true
+sort:
+  - field_name: created
+    order: desc
+sort_no: 100
+type: grid

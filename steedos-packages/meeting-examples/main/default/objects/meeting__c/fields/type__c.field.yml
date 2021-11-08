@@ -1,0 +1,13 @@
+name: type__c
+label: 会议类型
+options:
+  - label: 一般会议
+    value: 一般会议
+    color: 49d181
+  - label: 领导会议
+    value: 领导会议
+    color: 1890FF
+required: true
+sort_no: 110
+type: select
+omit: true

@@ -1,0 +1,75 @@
+name: meeting_all
+buttons:
+  - button_name: standard_new
+  - button_name: standard_edit
+  - button_name: standard_delete
+  - button_name: standard_view_instance
+  - button_name: standard_submit_for_approval
+  - button_name: parking_application
+  - button_name: scoring
+  - button_name: approve
+fields:
+  - field_name: name
+    is_required: true
+  - field_name: owner
+  - field_name: type__c
+    is_required: true
+  - field_name: meeting_room__c
+    is_required: true
+  - field_name: start__c
+    is_required: true
+  - field_name: end__c
+    is_required: true
+  - field_name: staff__c
+  - field_name: is_support__c
+    is_required: false
+  - field_name: status__c
+  - field_name: dining__c
+  - field_name: dining_executive__c
+  - field_name: sum__c
+
+label: 会议
+object_name: meeting__c
+profiles:
+  - admin
+  - user
+  - supplier
+  - customer
+related_lists:
+  - related_field_fullname: meeting_participants__c.meeting__c
+    sort_order: asc
+    page_size: 5
+    field_names:
+      - name
+      - company__c
+      - phone__c
+      - email__c
+      - license__c
+      - parking_lot__c
+    label: 外部参会人员
+  - related_field_fullname: cms_files.parent
+    visible_on: "{{formData && formData.type__c === '一般会议' ? false : true}}"
+  - related_field_fullname: tasks.related_to
+    visible_on: "{{formData && formData.type__c === '一般会议' ? false : true}}"
+    field_names:
+      - name
+      - assignees
+      - due_date
+      - state
+      - priority
+  # - related_field_fullname: events.related_to
+  #   field_names:
+  #     - name
+  #     - start
+  #     - end
+  #     - assignees
+  #     - related_to
+  #     - description
+  - related_field_fullname: meeting_score__c.meeting__c
+    field_names:
+      - name
+      - score__c
+      - created_by
+    label: 会议评分
+    visible_on: "{{formData && formData.type__c === '一般会议' ? false : true}}"
+type: record

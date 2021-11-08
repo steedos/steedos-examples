@@ -1,0 +1,5 @@
+name: parking_application
+is_enable: true
+label: 车辆审批
+'on': record_only
+visible: true

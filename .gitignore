@@ -74,3 +74,4 @@ typings/
 .env.local
 steedos-packages/.DS_Store
 .DS_Store
+storage/**

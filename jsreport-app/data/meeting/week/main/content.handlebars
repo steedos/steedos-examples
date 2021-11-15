@@ -1,0 +1,42 @@
+
+<html lang="zh-CN" >
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        {#asset /meeting/static/css/bootstrap.min.css @encoding=utf8}
+        {#asset styles.css  @encoding=utf8}
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="title">
+            <h3>{{data.userName}}的本周会议日程</h3>
+        </div>
+        {{#each data.meeting__c}}
+        <div class="box">
+            <table class="table table-bordered">
+                <tr>
+                    <th>会议主题</th>
+                    <td>{{name}}</td>
+                </tr>
+                <tr>
+                    <th>会议室名称</th>
+                    <td>{{meeting_room__c__expand.name}}</td>
+                </tr>
+                <tr>
+                    <th>开始时间</th>
+                    <td>{{_display.start__c}}</td>
+                </tr>
+                <tr>
+                    <th>结束时间</th>
+                    <td>{{_display.end__c}}</td>
+                </tr>
+            </table>
+        </div>
+        {{/each}}
+    </div>
+</body>
+</html>

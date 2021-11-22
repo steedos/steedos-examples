@@ -1,3 +1,10 @@
 .title{
     text-align: center;
 }
+
+.text-align{
+    text-align: center;
+}
+.table-bordered tr .middle{
+    vertical-align:middle;
+}

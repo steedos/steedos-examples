@@ -14,27 +14,68 @@
     {{!-- {{jsonStringify data}} --}}
     <div class="container">
         <div class="title">
+            {{#if data.meeting__c.length }}
             <h3>{{data.userName}}的本周会议日程</h3>
+            {{else}}
+            <h3>本周无会议</h3>
+            {{/if}}
         </div>
         {{#each data.meeting__c}}
         <div class="box">
             <table class="table table-bordered">
                 <tr>
                     <th>会议主题</th>
-                    <td>{{name}}</td>
+                    <td colspan="2">{{name}}</td>
                 </tr>
                 <tr>
                     <th>会议室名称</th>
-                    <td>{{meeting_room__c__expand.name}}</td>
+                    <td colspan="2">{{meeting_room__c__expand.name}}</td>
                 </tr>
                 <tr>
                     <th>开始时间</th>
-                    <td>{{_display.start__c}}</td>
+                    <td colspan="2">{{_display.start__c}}</td>
                 </tr>
                 <tr>
                     <th>结束时间</th>
-                    <td>{{_display.end__c}}</td>
+                    <td colspan="2">{{_display.end__c}}</td>
                 </tr>
+                <tr>
+                    <th rowspan={{rowspanAddOne staff__c__expand.length}} class="text-align middle">内部参会人员</th>
+                    <th>姓名</th>
+                    <th>职务</th>
+                </tr>
+                {{#if staff__c__expand.length }}
+                {{#each staff__c__expand}}
+                <tr>
+                    <td >{{name}}</td>
+                    <td >{{position spaceuser}}</td>
+                </tr>
+                {{/each}}
+                {{else}}
+                <tr>
+                    <td >&ensp;</td>
+                    <td >&ensp;</td>
+                </tr>
+                {{/if}}
+
+                <tr>
+                    <th rowspan={{rowspanAddOne _related_meeting_participants__c_meeting__c.length}} class="text-align middle">外部参会人员</th>
+                    <th>姓名</th>
+                    <th>单位</th>
+                </tr>
+                {{#if _related_meeting_participants__c_meeting__c.length }}
+                {{#each _related_meeting_participants__c_meeting__c}}
+                <tr>
+                    <td >{{name}}</td>
+                    <td >{{company__c}}</td>
+                </tr>
+                {{/each}}
+                {{else}}
+                <tr>
+                    <td >&ensp;</td>
+                    <td >&ensp;</td>
+                </tr>
+                {{/if}}
             </table>
         </div>
         {{/each}}

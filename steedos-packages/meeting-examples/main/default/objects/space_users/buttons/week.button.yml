@@ -1,0 +1,5 @@
+name: week
+is_enable: true
+label: 本周会议
+'on': record_only
+visible: true

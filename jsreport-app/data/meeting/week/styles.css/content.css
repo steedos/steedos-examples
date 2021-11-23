@@ -1,10 +1,14 @@
-.title{
-    text-align: center;
-}
-
 .text-align{
     text-align: center;
 }
 .table-bordered tr .middle{
     vertical-align:middle;
 }
+
+/* 分屏所需代码，还需调整main中的相关内容。
+.box{
+    border: 1px solid white;
+    height: 1056px;
+    padding: 20px;
+}
+*/

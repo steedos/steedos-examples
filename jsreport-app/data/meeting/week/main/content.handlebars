@@ -24,7 +24,7 @@
         <div class="box">
             <table class="table table-bordered">
                 <tr>
-                    <th>会议主题</th>
+                    <th style="width: 30%">会议主题</th>
                     <td colspan="2">{{name}}</td>
                 </tr>
                 <tr>
@@ -41,8 +41,8 @@
                 </tr>
                 <tr>
                     <th rowspan={{rowspanAddOne staff__c__expand.length}} class="text-align middle">内部参会人员</th>
-                    <th>姓名</th>
-                    <th>职务</th>
+                    <th style="width: 35%">姓名</th>
+                    <th style="width: 35%">职务</th>
                 </tr>
                 {{#if staff__c__expand.length }}
                 {{#each staff__c__expand}}

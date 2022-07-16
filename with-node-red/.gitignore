@@ -15,3 +15,7 @@ dist
 logs
 
 .env.local
+
+.flows.json.backup
+
+flows/.config.*

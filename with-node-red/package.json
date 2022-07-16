@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "red": "node-red --userDir flows",
+    "red": "node-red -u flows",
     "start": "steedos start"
   },
   "dependencies": {

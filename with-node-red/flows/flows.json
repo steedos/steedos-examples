@@ -8,6 +8,15 @@
         "env": []
     },
     {
+        "id": "ce147b46c731d342",
+        "type": "steedos-config",
+        "name": "steedos",
+        "transporter": "redis://127.0.0.1:6379/2",
+        "namespace": "steedos",
+        "options": "{}",
+        "optionsType": "json"
+    },
+    {
         "id": "093de831c44358e0",
         "type": "inject",
         "z": "2276d6559d8cdc4c",
@@ -50,6 +59,18 @@
         "statusType": "auto",
         "x": 340,
         "y": 140,
+        "wires": []
+    },
+    {
+        "id": "26c9301fac99bdbe",
+        "type": "steedos-instance",
+        "z": "2276d6559d8cdc4c",
+        "broker": "ce147b46c731d342",
+        "name": "steedos",
+        "topic": "mol",
+        "location": "flow",
+        "x": 90,
+        "y": 240,
         "wires": []
     }
 ]

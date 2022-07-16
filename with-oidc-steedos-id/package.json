@@ -1,0 +1,14 @@
+{
+  "name": "with-oidc-steedos-id",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": "steedos start"
+  },
+  "dependencies": {
+    "@steedos/service-enterprise": "^2.2"
+  },
+  "devDependencies": {
+    "eslint": "8.19.0"
+  }
+}

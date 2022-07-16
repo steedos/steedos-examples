@@ -1,6 +1,8 @@
 Steedos + RocketChat
 ===
 
+This example shows how to integrate Steedos and [RocketChat](https://rocket.chat/), an open-source fully customizable communications platform developed in JavaScript for organizations with high standards of data protection.
+
 - Login to RocketChat with Steedos ID
 - Send Steedos Notifications to RocketChat
 - Add Graphql API to RocketChat Database with an external MongoDB datasource.

@@ -17,6 +17,15 @@
         "optionsType": "json"
     },
     {
+        "id": "5ab5acead56ffaea",
+        "type": "steedos-service-config",
+        "name": "node-red",
+        "version": "",
+        "settings": "{}",
+        "rest": "",
+        "settingsType": "json"
+    },
+    {
         "id": "093de831c44358e0",
         "type": "inject",
         "z": "2276d6559d8cdc4c",
@@ -71,6 +80,39 @@
         "location": "flow",
         "x": 90,
         "y": 240,
+        "wires": []
+    },
+    {
+        "id": "116d051551bd2fdd",
+        "type": "steedos-event",
+        "z": "2276d6559d8cdc4c",
+        "broker": "ce147b46c731d342",
+        "service": "5ab5acead56ffaea",
+        "name": "@space_users.updated",
+        "topic": "@space_users.updated",
+        "group": "",
+        "x": 150,
+        "y": 320,
+        "wires": [
+            [
+                "041b5cf925523d57"
+            ]
+        ]
+    },
+    {
+        "id": "041b5cf925523d57",
+        "type": "debug",
+        "z": "2276d6559d8cdc4c",
+        "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 420,
+        "y": 320,
         "wires": []
     }
 ]

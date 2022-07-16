@@ -2,20 +2,20 @@ This is a [Steedos](https://www.steedos.com/) project bootstrapped with [`create
 
 ## Getting Started
 
-### Start mongodb & redis service
+### Start steedos & mongodb & redis service
 
 ```bash
 docker-compose up
 ```
 
-### Start steedos service
+### Start Node-Red service
 
 ```bash
 yarn
 yarn start
 ```
 
-Open [http://localhost:5000](http://localhost:5000) with your browser to see the result.
+Open [http://localhost:1880](http://localhost:1880) with your browser to see the result.
 
 ## Learn More
 

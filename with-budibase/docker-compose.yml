@@ -119,10 +119,65 @@ services:
     labels:
       - "com.centurylinklabs.watchtower.enable=false"
 
+  steedos:
+    image: steedos/steedos-community:2.2
+    command: "yarn start"
+    ports:
+      - "3000:3000"
+    volumes:
+      - "steedos-installed-packages:/app/.steedos"
+      - "steedos-data:/app/storage"
+    environment:
+      - ROOT_URL=http://localhost:3000
+      - MONGO_URL=mongodb://mongodb:27017/steedos
+      - MONGO_OPLOG_URL=mongodb://mongodb:27017/local
+      - STEEDOS_CFS_STORE=local
+      - STEEDOS_STORAGE_DIR=/app/storage
+      - STEEDOS_TENANT_ENABLE_PASSWORD_LOGIN=true
+      - TRANSPORTER=redis://:${REDIS_PASSWORD}@redis-service:6379/2
+      - CACHER=redis://:${REDIS_PASSWORD}@redis-service:6379
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000/api/health"]
+      interval: 60s
+      timeout: 10s
+      retries: 3
+    depends_on:
+      redis:
+        condition: service_started
+      mongodb:
+        condition: service_healthy
+    
+
+  mongodb:
+    image: 'bitnami/mongodb:4.4'
+    restart: on-failure
+    ports:
+      - 27017:27017
+    environment:
+      - MONGODB_REPLICA_SET_MODE=primary
+      - MONGODB_INITIAL_PRIMARY_HOST=mongodb
+      - MONGODB_REPLICA_SET_NAME=steedos
+      - MONGODB_ENABLE_JOURNAL=true
+      - MONGODB_ADVERTISED_HOSTNAME=mongodb
+      - ALLOW_EMPTY_PASSWORD=yes
+    healthcheck:
+      test: echo 'db.runCommand("ping").ok' | mongo admin -u root -p ${MONGODB_PASSWORD:-} --quiet | grep 1
+      interval: 10s
+      timeout: 10s
+      retries: 5
+    volumes:
+      - 'steedos-mongo-data:/bitnami'
+
 volumes:
   couchdb3_data:
     driver: local
   minio_data:
     driver: local
   redis_data:
+    driver: local
+  steedos-mongo-data:
+    driver: local
+  steedos-installed-packages:
+    driver: local
+  steedos-data:
     driver: local

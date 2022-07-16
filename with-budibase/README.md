@@ -5,7 +5,12 @@ Steedos + Budibase
 
 This example shows how to integrate Steedos and [Budibase](https://budibase.com/). 
 
+## Features 
+
 - Login to Budibase with Steedos ID
+- Connect to Steedos Objects in Budibase
+
+## Next Steps
+
 - Manage Budibase Apps in Steedos 
 - Sync Budibase Apps to Metadata ${app_id}.budibase.json
-- Connect to Steedos Objects in Budibase

@@ -12,7 +12,7 @@ ports:
 tasks:
   - name: MongoDB & Redis
     command: |
-      cd with-docker
+      cd with-docker-compose
       docker-compose up
   - name: Steedos
     init: |

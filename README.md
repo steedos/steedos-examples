@@ -1,5 +1,7 @@
 # Steedos Examples
 
+Enjoy our selection of Steedos examples to learn from or incorporate into your project.
+
 ## Getting Started
 
 ### Start mongodb & redis service

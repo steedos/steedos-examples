@@ -3,30 +3,37 @@ version: "3.9"
 services:
 
   postgres:
-      image: postgres
-      volumes:
-        - postgres_data:/var/lib/postgresql/data
-      environment:
-        POSTGRES_DB: keycloak
-        POSTGRES_USER: keycloak
-        POSTGRES_PASSWORD: password
+    image: postgres:11
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_DB=${POSTGRES_DB:-keycloak}
+      - POSTGRES_USER=${POSTGRES_USER:-keycloak}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-keycloak}
+    volumes:
+      - 'postgres_data:/var/lib/postgresql/data'
+
   keycloak:
-      image: quay.io/keycloak/keycloak:legacy
-      environment:
-        DB_VENDOR: POSTGRES
-        DB_ADDR: postgres
-        DB_DATABASE: keycloak
-        DB_USER: keycloak
-        DB_SCHEMA: public
-        DB_PASSWORD: password
-        KEYCLOAK_USER: admin
-        KEYCLOAK_PASSWORD: Pa55w0rd
-        # Uncomment the line below if you want to specify JDBC parameters. The parameter below is just an example, and it shouldn't be used in production without knowledge. It is highly recommended that you read the PostgreSQL JDBC driver documentation in order to use it.
-        #JDBC_PARAMS: "ssl=true"
-      ports:
-        - 8080:8080
-      depends_on:
-        - postgres
+    image: steedos/keycloak
+    environment:
+      - KEYCLOAK_ADMIN=${KEYCLOAK_USER:-keycloak}
+      - KEYCLOAK_ADMIN_PASSWORD=${KEYCLOAK_PASSWORD:-keycloak}
+      - PROXY_ADDRESS_FORWARDING=true
+      - KC_HTTP_ENABLED=true
+      - KC_PROXY=passthrough
+      - KC_DB=postgres
+      - KC_DB_URL=jdbc:postgresql://postgres/${POSTGRES_DB:-keycloak}
+      - KC_DB_USERNAME=${POSTGRES_USER:-keycloak}
+      - KC_DB_PASSWORD=${POSTGRES_PASSWORD:-keycloak}
+      - KC_HOSTNAME=${KC_HOSTNAME}
+      - KC_HOSTNAME_STRICT=false
+      - KC_SPI_THEME_DEFAULT=steedos
+    command:
+      - "start"
+    depends_on:
+      - postgres
+    ports:
+      - "8080:8080"
 
   redis:
     image: redis:6.2

@@ -17,6 +17,13 @@ yarn start
 
 Open [http://localhost:5000](http://localhost:5000) with your browser to see the result.
 
+### Running in Gitpod
+
+```bash
+echo "ROOT_URL=$(gp url 5000)" >> .env.local
+echo "STEEDOS_IDENTITY_OIDC_CONFIG_URL=$(gp url 8080)/realms/master/.well-known/openid-configuration" >> .env.local
+```
+
 ## Learn More
 
 To learn more about Steedos Platform, take a look at the following resources:

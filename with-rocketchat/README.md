@@ -1,4 +1,8 @@
-This is a [Steedos](https://www.steedos.com/) project bootstrapped with [`create-steedos-app`](https://github.com/steedos/steedos-platform/tree/master/packages/create-steedos-app).
+Steedos + RocketChat
+===
+
+- Login to RocketChat with Steedos ID
+- Add Graphql API to RocketChat Database with an external MongoDB datasource.
 
 ## Getting Started
 

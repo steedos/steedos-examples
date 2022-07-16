@@ -1,0 +1,13 @@
+{
+  "name": "with-node-red",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "red": "node-red --userDir flows",
+    "start": "steedos start"
+  },
+  "dependencies": {
+    "@steedos/service-community": "^2.2",
+    "node-red": "^3.0.0"
+  }
+}

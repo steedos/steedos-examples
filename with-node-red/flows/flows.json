@@ -1,0 +1,55 @@
+[
+    {
+        "id": "2276d6559d8cdc4c",
+        "type": "tab",
+        "label": "流程 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "093de831c44358e0",
+        "type": "inject",
+        "z": "2276d6559d8cdc4c",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 110,
+        "y": 140,
+        "wires": [
+            [
+                "13c359c3e40772f7"
+            ]
+        ]
+    },
+    {
+        "id": "13c359c3e40772f7",
+        "type": "debug",
+        "z": "2276d6559d8cdc4c",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 340,
+        "y": 140,
+        "wires": []
+    }
+]

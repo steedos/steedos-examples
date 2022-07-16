@@ -2,7 +2,9 @@ Steedos + RocketChat
 ===
 
 - Login to RocketChat with Steedos ID
+- Send Steedos Notifications to RocketChat
 - Add Graphql API to RocketChat Database with an external MongoDB datasource.
+- Build a RocketChat Dashboard with Amis
 
 ## Getting Started
 

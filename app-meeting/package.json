@@ -1,6 +1,7 @@
 {
     "name": "@steedos-examples/app-meeting",
     "version": "0.1.0",
+    "main": "package.service.js",
     "private": true,
     "scripts": {
       "start": "steedos start"

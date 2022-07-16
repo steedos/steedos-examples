@@ -72,6 +72,9 @@ typings/
 # FuseBox cache
 .fusebox/
 .env.local
-steedos-packages/.DS_Store
+steedos-packages
 .DS_Store
-storage/**
+storage
+
+yarn.lock
+

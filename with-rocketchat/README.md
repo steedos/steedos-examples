@@ -1,7 +1,7 @@
 Steedos + RocketChat
 ===
 
-RocketChat is an open-source fully customizable communications platform developed in JavaScript for organizations with high standards of data protection.
+[RocketChat](https://rocket.chat/) is an open-source fully customizable communications platform developed in JavaScript for organizations with high standards of data protection.
 
 This example shows how to integrate Steedos and [RocketChat](https://rocket.chat/). 
 

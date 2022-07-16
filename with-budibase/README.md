@@ -9,6 +9,7 @@ This example shows how to integrate Steedos and [Budibase](https://budibase.com/
 
 - Login to Budibase with Steedos ID
 - Connect to Steedos Objects in Budibase
+- SSO with JWT
 
 ## Next Steps
 

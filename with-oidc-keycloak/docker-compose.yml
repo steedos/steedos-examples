@@ -1,0 +1,58 @@
+version: "3.9"
+
+services:
+
+  postgres:
+      image: postgres
+      volumes:
+        - postgres_data:/var/lib/postgresql/data
+      environment:
+        POSTGRES_DB: keycloak
+        POSTGRES_USER: keycloak
+        POSTGRES_PASSWORD: password
+  keycloak:
+      image: quay.io/keycloak/keycloak:legacy
+      environment:
+        DB_VENDOR: POSTGRES
+        DB_ADDR: postgres
+        DB_DATABASE: keycloak
+        DB_USER: keycloak
+        DB_SCHEMA: public
+        DB_PASSWORD: password
+        KEYCLOAK_USER: admin
+        KEYCLOAK_PASSWORD: Pa55w0rd
+        # Uncomment the line below if you want to specify JDBC parameters. The parameter below is just an example, and it shouldn't be used in production without knowledge. It is highly recommended that you read the PostgreSQL JDBC driver documentation in order to use it.
+        #JDBC_PARAMS: "ssl=true"
+      ports:
+        - 8080:8080
+      depends_on:
+        - postgres
+
+  redis:
+    image: redis:6.2
+    command: "redis-server --save \"\" --appendonly no --loglevel warning"
+    ports:
+      - "6379:6379"
+  
+  mongodb:
+    image: 'bitnami/mongodb:4.4'
+    restart: on-failure
+    ports:
+      - 27017:27017
+    environment:
+      - MONGODB_REPLICA_SET_MODE=primary
+      - MONGODB_PORT_NUMBER=${MONGODB_PORT_NUMBER:-27017}
+      - MONGODB_INITIAL_PRIMARY_HOST=${MONGODB_INITIAL_PRIMARY_HOST:-mongodb}
+      - MONGODB_INITIAL_PRIMARY_PORT_NUMBER=${MONGODB_INITIAL_PRIMARY_PORT_NUMBER:-27017}
+      - MONGODB_REPLICA_SET_NAME=${MONGODB_REPLICA_SET_NAME:-steedos}
+      - MONGODB_ENABLE_JOURNAL=${MONGODB_ENABLE_JOURNAL:-true}
+      - MONGODB_ADVERTISED_HOSTNAME=${MONGODB_ADVERTISED_HOSTNAME:-mongodb}
+      - ALLOW_EMPTY_PASSWORD=${ALLOW_EMPTY_PASSWORD:-yes}
+    volumes:
+      - 'steedos-mongo-data:/bitnami'
+
+volumes:
+  steedos-mongo-data:
+      driver: local
+  postgres_data:
+      driver: local

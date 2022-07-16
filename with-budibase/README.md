@@ -14,4 +14,4 @@ This example shows how to integrate Steedos and [Budibase](https://budibase.com/
 ## Next Steps
 
 - Manage Budibase Apps in Steedos 
-- Sync Budibase Apps to Metadata ${app_id}.budibase.json
+- Sync Budibase Apps to Project Metadata ${app_id}.budibase.json

@@ -17,7 +17,7 @@ yarn
 yarn start
 ```
 
-## Create as a template
+## Use as an app template
 
 ```bash
 npx create-steedos-app -e https://github.com/steedos/steedos-examples/tree/main/${example-name}

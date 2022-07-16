@@ -6,16 +6,16 @@ services:
     build: .
     command: "yarn start"
     ports:
-      - "${STEEDOS_PORT:-3000}:3000"
+      - "3000:3000"
     environment:
-      - ROOT_URL=${STEEDOS_ROOT_URL:-http://localhost:3000} 
-      - MONGO_URL=mongodb://root:${MONGODB_PASSWORD:-steedos}@${MONGODB_ADVERTISED_HOSTNAME:-mongodb}:${MONGODB_INITIAL_PRIMARY_PORT_NUMBER:-27017}/${MONGODB_DATABASE:-steedos}?authSource=admin
-      - MONGO_OPLOG_URL=mongodb://root:${MONGODB_PASSWORD:-steedos}@${MONGODB_ADVERTISED_HOSTNAME:-mongodb}:${MONGODB_INITIAL_PRIMARY_PORT_NUMBER:-27017}/local?authSource=admin
+      - ROOT_URL=http://localhost:3000
+      - MONGO_URL=mongodb://mongodb:27017/steedos
+      - MONGO_OPLOG_URL=mongodb://mongodb:27017/local
       - STEEDOS_CFS_STORE=local
       - STEEDOS_STORAGE_DIR=/app/storage
       - STEEDOS_TENANT_ENABLE_PASSWORD_LOGIN=true
-      - TRANSPORTER=redis://:${REDIS_PASSWORD:-steedos}@redis:6379/2
-      - CACHER=redis://:${REDIS_PASSWORD:-steedos}@redis:6379
+      - TRANSPORTER=redis://redis:6379/2
+      - CACHER=redis://redis:6379
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:3000/api/health"]
       interval: 60s
@@ -40,13 +40,16 @@ services:
       - 27017:27017
     environment:
       - MONGODB_REPLICA_SET_MODE=primary
-      - MONGODB_PORT_NUMBER=${MONGODB_PORT_NUMBER:-27017}
-      - MONGODB_INITIAL_PRIMARY_HOST=${MONGODB_INITIAL_PRIMARY_HOST:-mongodb}
-      - MONGODB_INITIAL_PRIMARY_PORT_NUMBER=${MONGODB_INITIAL_PRIMARY_PORT_NUMBER:-27017}
-      - MONGODB_REPLICA_SET_NAME=${MONGODB_REPLICA_SET_NAME:-steedos}
-      - MONGODB_ENABLE_JOURNAL=${MONGODB_ENABLE_JOURNAL:-true}
-      - MONGODB_ADVERTISED_HOSTNAME=${MONGODB_ADVERTISED_HOSTNAME:-mongodb}
-      - ALLOW_EMPTY_PASSWORD=${ALLOW_EMPTY_PASSWORD:-yes}
+      - MONGODB_INITIAL_PRIMARY_HOST=mongodb
+      - MONGODB_REPLICA_SET_NAME=steedos
+      - MONGODB_ENABLE_JOURNAL=true
+      - MONGODB_ADVERTISED_HOSTNAME=mongodb
+      - ALLOW_EMPTY_PASSWORD=yes
+    healthcheck:
+      test: echo 'db.runCommand("ping").ok' | mongo admin -u root -p ${MONGODB_PASSWORD:-} --quiet | grep 1
+      interval: 10s
+      timeout: 10s
+      retries: 5
     volumes:
       - 'steedos-mongo-data:/bitnami'
 

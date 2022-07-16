@@ -1,0 +1,15 @@
+{
+  "name": "with-budibase",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "budibase": "cd budibase && docker-compose up -d",
+    "mongo": "docker-compose up -d",
+    "start": "steedos start"
+  },
+  "dependencies": {
+    "@steedos/service-enterprise": "^2.2"
+  },
+  "devDependencies": {
+  }
+}

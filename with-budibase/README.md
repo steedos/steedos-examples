@@ -12,5 +12,6 @@ This example shows how to integrate Steedos and [Budibase](https://budibase.com/
 
 ## Next Steps
 
+- Generate Budibase App Schema for Steedos Objects.
 - Manage Budibase Apps in Steedos 
 - Sync Budibase Apps to Metadata ${app_id}.budibase.json

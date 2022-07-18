@@ -15,6 +15,8 @@ services:
       - STEEDOS_STORAGE_DIR=/app/storage
       - STEEDOS_TENANT_ENABLE_PASSWORD_LOGIN=true
       - CACHER=redis://redis:6379
+    volumes:
+      - './steedos-app:/app/steedos-app'
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:3000/api/health"]
       interval: 60s

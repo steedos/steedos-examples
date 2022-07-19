@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+    camunda-postgres:
+        image: camunda/camunda-bpm-platform:${DISTRO:-latest}
+        environment:
+            - DB_DRIVER=org.postgresql.Driver
+            - DB_URL=jdbc:postgresql://postgres:5432/camunda
+            - DB_USERNAME=camunda
+            - DB_PASSWORD=camunda
+            - WAIT_FOR=postgres:5432
+        links:
+            - postgres
+        ports:
+            - "8080:8080"
+        restart: unless-stopped
+
+    postgres:
+        image: postgres:9.6
+        environment:
+            - POSTGRES_USER=camunda
+            - POSTGRES_PASSWORD=camunda

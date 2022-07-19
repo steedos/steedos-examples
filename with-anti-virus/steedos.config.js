@@ -7,7 +7,9 @@ module.exports = {
 
 	// Called after broker started.
 	started(broker) {
-		broker.createService(require("@steedos/service-community"));
+		broker.createService(require("@steedos/service-enterprise"));
+		// 附件病毒扫描
+		broker.createService(require("@steedos/ee_virus-scan"));
 	},
 
 };

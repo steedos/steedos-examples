@@ -1,0 +1,8 @@
+
+services:
+  clamav:
+    image: clamav/clamav:latest
+    restart: always
+    ports:
+      - "3310:3310"
+      - "7357:7357"

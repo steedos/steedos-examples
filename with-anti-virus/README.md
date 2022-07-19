@@ -2,6 +2,12 @@ This is a [Steedos](https://www.steedos.com/) project bootstrapped with [`create
 
 ## Getting Started
 
+### Start antivirus service
+
+```bash
+docker-compose -f clamav/docker-compose.yml up
+```
+
 ### Start mongodb & redis service
 
 ```bash
@@ -15,7 +21,7 @@ yarn
 yarn start
 ```
 
-Open [http://localhost:5000](http://localhost:5000) with your browser to see the result.
+Open [http://localhost:5500](http://localhost:5500) with your browser to see the result.
 
 ## Learn More
 

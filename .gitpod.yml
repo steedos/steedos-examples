@@ -10,6 +10,12 @@ ports:
     visibility: public
 # List the start up tasks. You can start them in parallel in multiple terminals. See https://www.gitpod.io/docs/config-start-tasks/
 tasks:
+  - name: Node14
+    command: |
+      nvm i 14
+      nvm use 14
+      nvm alias default  14
+      echo "nvm use default &>/dev/null" >> ~/.bashrc.d/51-nvm-fix
   - name: Steedos
     init: |
       git config --global pull.rebase false

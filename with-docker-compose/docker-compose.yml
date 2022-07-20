@@ -56,19 +56,6 @@ services:
     volumes:
       - 'steedos-mongo-data:/bitnami'
 
-  watchtower-service:
-    restart: always
-    image: containrrr/watchtower
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
-    command: --debug --http-api-update steedos
-    environment:
-      - WATCHTOWER_HTTP_API=true
-      - WATCHTOWER_HTTP_API_TOKEN=steedos
-      - WATCHTOWER_CLEANUP=true
-    labels:
-      - "com.centurylinklabs.watchtower.enable=false"
-
 volumes:
   steedos-mongo-data:
   steedos-installed-packages:

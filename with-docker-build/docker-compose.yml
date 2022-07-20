@@ -15,11 +15,6 @@ services:
       - STEEDOS_STORAGE_DIR=/app/storage
       - STEEDOS_TENANT_ENABLE_PASSWORD_LOGIN=true
       - CACHER=redis://redis:6379
-    healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:3000/api/health"]
-      interval: 60s
-      timeout: 10s
-      retries: 3
     depends_on:
       redis:
         condition: service_started
@@ -45,7 +40,7 @@ services:
       - MONGODB_ADVERTISED_HOSTNAME=mongodb
       - ALLOW_EMPTY_PASSWORD=yes
     healthcheck:
-      test: echo 'db.runCommand("ping").ok' | mongo admin -u root -p ${MONGODB_PASSWORD:-} --quiet | grep 1
+      test: echo 'db.runCommand("ping").ok' | mongo admin --quiet | grep 1
       interval: 10s
       timeout: 10s
       retries: 5

@@ -7,7 +7,7 @@ RUN apt-get update || : && apt-get install -y \
 
 WORKDIR /app
 
-ADD steedos-app
+ADD steedos-app .
 ADD package.json .
 ADD steedos.config.js .
 

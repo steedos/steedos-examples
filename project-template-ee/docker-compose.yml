@@ -1,6 +1,8 @@
 version: "3.9"
 
 services:
+  
+  # 可选：使用 docker 启动平台。
   steedos:
     image: steedos/steedos-enterprise:2.2
     command: "yarn start"
@@ -20,24 +22,20 @@ services:
       - STEEDOS_TENANT_ENABLE_PASSWORD_LOGIN=true
       - TRANSPORTER=redis://redis:6379/2
       - CACHER=redis://redis:6379
-    healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:3000/api/health"]
-      interval: 60s
-      timeout: 10s
-      retries: 3
     depends_on:
       redis:
         condition: service_started
       mongodb:
         condition: service_healthy
     
+  # 缓存服务
   redis:
     image: redis:6.2
     command: "redis-server --save \"\" --appendonly no --loglevel warning"
     ports:
       - "6379:6379"
   
-
+  # 数据库服务
   mongodb:
     image: 'bitnami/mongodb:4.4'
     restart: on-failure

@@ -4,8 +4,8 @@
   "private": true,
   "workspaces": ["steedos-packages/*"],
   "scripts": {
-    "docker": "docker-compose up -d",
-    "docker:logs": "docker-compose logs -f",
+    "bootstrap": "lerna bootstrap",
+    "build": "lerna run build",
     "start": "steedos start"
   },
   "dependencies": {

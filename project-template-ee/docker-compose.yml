@@ -1,13 +1,43 @@
 version: "3.9"
 
 services:
-
+  steedos:
+    image: steedos/steedos-enterprise:2.2
+    command: "yarn start"
+    ports:
+      - "3000:3000"
+    volumes:
+      - "steedos-installed-packages:/app/.steedos"
+      - "steedos-data:/app/storage"
+      - "./steedos-packages:/app/steedos-packages"
+      - "./steedos.config.js:/app/steedos.config.js"
+    environment:
+      - ROOT_URL=http://localhost:3000
+      - MONGO_URL=mongodb://mongodb:27017/steedos
+      - MONGO_OPLOG_URL=mongodb://mongodb:27017/local
+      - STEEDOS_CFS_STORE=local
+      - STEEDOS_STORAGE_DIR=/app/storage
+      - STEEDOS_TENANT_ENABLE_PASSWORD_LOGIN=true
+      - TRANSPORTER=redis://redis:6379/2
+      - CACHER=redis://redis:6379
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000/api/health"]
+      interval: 60s
+      timeout: 10s
+      retries: 3
+    depends_on:
+      redis:
+        condition: service_started
+      mongodb:
+        condition: service_healthy
+    
   redis:
     image: redis:6.2
     command: "redis-server --save \"\" --appendonly no --loglevel warning"
     ports:
       - "6379:6379"
   
+
   mongodb:
     image: 'bitnami/mongodb:4.4'
     restart: on-failure
@@ -20,8 +50,15 @@ services:
       - MONGODB_ENABLE_JOURNAL=true
       - MONGODB_ADVERTISED_HOSTNAME=mongodb
       - ALLOW_EMPTY_PASSWORD=yes
+    healthcheck:
+      test: echo 'db.runCommand("ping").ok' | mongo admin --quiet | grep 1
+      interval: 10s
+      timeout: 10s
+      retries: 5
     volumes:
       - 'steedos-mongo-data:/bitnami'
 
 volumes:
   steedos-mongo-data:
+  steedos-installed-packages:
+  steedos-data:

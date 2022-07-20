@@ -29,18 +29,6 @@ async function validData(doc) {
 }
 
 /**
- * 获取内部参会人员中的领导
- * @param {string} spaceId 
- * @param {array} users 人员id
- * @returns array
- */
-async function getLeaders(spaceId, users) {
-    const spaceUserObj = objectql.getObject('space_users');
-    const spaceUsers = await spaceUserObj.find({ filters: [['space', '=', spaceId], ['position', 'contains', '领导'], ['user', 'in', users]] });
-    return spaceUsers;
-}
-
-/**
  * 为每个人创建日程进行会议通知
  * @param {*} meetingId 
  */
@@ -123,7 +111,6 @@ async function dispatchTask(meetingId) {
             "ids": [meetingId]
         }
     };
-    console.log("==doc.dining_executive__c ==", doc.dining_executive__c );
     const fromUser = await userObj.findOne(fromUserId);
     for (const userId of (doc.dining_executive__c || [])) {
         // 如果已经创建则不重复创建
@@ -157,20 +144,23 @@ async function dispatchTask(meetingId) {
 }
 
 /**
- * 会议类型根据参会人员中是否有领导自动计算
- * @param {*} spaceId 
- * @param {*} users 
- * @returns 领导会议/一般会议
+ * 删除会议关联的事件及其通知记录
+ * @param {*} meetingId 
  */
-async function getMeetingType(spaceId, users) {
-    const leaders = await getLeaders(spaceId, users || []);
-    return (leaders.length > 0) ? '领导会议' : '一般会议';
+async function deleteRelatedEvents(meetingId) {
+}
+
+/**
+ * 删除会议关联的任务及其通知记录
+ * @param {*} meetingId 
+ */
+async function deleteRelatedTasks(meetingId) {
 }
 
 module.exports = {
     validData,
-    getLeaders,
     notifyUsers,
     dispatchTask,
-    getMeetingType
+    deleteRelatedEvents,
+    deleteRelatedTasks
 }

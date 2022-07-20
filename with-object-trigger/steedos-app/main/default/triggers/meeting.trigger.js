@@ -5,7 +5,6 @@ module.exports = {
     listenTo: 'meeting__c',
 
     beforeInsert: async function(){
-        console.log("===beforeInsert====");
         const doc = this.doc;
         await manager.validData(doc);
     },
@@ -21,11 +20,12 @@ module.exports = {
             }
             await manager.validData(newDoc);
         }
-        console.log("===beforeUpdate====");
     },
 
     beforeDelete: async function(){
-    
+        const id = this.id;
+        await manager.deleteRelatedEvents(id);
+        await manager.deleteRelatedTasks(id);
     },
 
     beforeFind: async function(){
@@ -39,15 +39,12 @@ module.exports = {
     },
 
     afterUpdate: async function(){
-        console.log("===afterUpdate====");
         const id = this.doc._id;
         await manager.notifyUsers(id);
         await manager.dispatchTask(id);
     },
 
     afterDelete: async function(){
-        const id = this.doc._id;
-        await manager.notifyUsers(id);
     },
 
 }

@@ -10,6 +10,7 @@ services:
       - "steedos-installed-packages:/app/.steedos"
       - "steedos-data:/app/storage"
       - "./steedos-app:/app/steedos-app"
+      - "./.env.local:/app/.env"
     environment:
       - ROOT_URL=http://localhost:3000
       - MONGO_URL=mongodb://mongodb:27017/steedos
@@ -41,7 +42,7 @@ services:
     image: 'bitnami/mongodb:4.4'
     restart: on-failure
     ports:
-      - 27017:27017
+      - 27018:27017
     environment:
       - MONGODB_REPLICA_SET_MODE=primary
       - MONGODB_INITIAL_PRIMARY_HOST=mongodb

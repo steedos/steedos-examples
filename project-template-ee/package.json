@@ -2,6 +2,7 @@
   "name": "project-template-ee",
   "version": "2.2.54",
   "private": true,
+  "workspaces": ["steedos-packages/*"],
   "scripts": {
     "start": "steedos start"
   },

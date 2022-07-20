@@ -1,4 +1,7 @@
-This is a [Steedos](https://www.steedos.com/) project bootstrapped with [`create-steedos-app`](https://github.com/steedos/steedos-platform/tree/master/packages/create-steedos-app).
+Steedos Workspaces
+===
+
+本示例演示如何实现多包开发。
 
 ## Getting Started
 

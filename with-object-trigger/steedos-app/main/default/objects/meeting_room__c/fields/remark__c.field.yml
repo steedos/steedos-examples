@@ -1,0 +1,5 @@
+name: remark__c
+label: 备注信息
+rows: 3
+sort_no: 150
+type: textarea

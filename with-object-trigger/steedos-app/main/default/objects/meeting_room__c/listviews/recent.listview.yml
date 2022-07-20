@@ -1,0 +1,22 @@
+name: recent
+columns:
+  - field: name
+    _id: 6ca8fb2d-bd69-4e62-bf9f-fc3dc622af1c
+  - _id: 0b88d92a-088c-495f-b250-d0a0fe64a7cc
+    field: remark__c
+  - _id: 7985805e-46a8-4d10-ac63-31bb6fb31232
+    field: sort__c
+
+mobile_columns:
+  - _id: 9841e0bf-0c60-4b45-8543-b1b6461fa6ac
+    field: name
+  - _id: 36d7e678-9d7e-4330-a88d-fa0e6a079093
+    field: sort__c
+    
+filter_scope: space
+filters: []
+label: 最近查看
+scrolling_mode: standard
+shared: true
+sort_no: 100
+type: grid

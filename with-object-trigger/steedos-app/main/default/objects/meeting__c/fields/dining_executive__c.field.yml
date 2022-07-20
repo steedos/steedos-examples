@@ -1,0 +1,8 @@
+name: dining_executive__c
+group: 会议任务
+label: 用餐服务执行人
+multiple: true
+reference_to: users
+searchable: true
+sort_no: 230
+type: lookup

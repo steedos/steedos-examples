@@ -1,0 +1,14 @@
+name: status__c
+label: 状态
+options:
+  - label: 空闲
+    value: free
+    color: 49d181
+  - label: 预定
+    value: pre
+    color: A9AEB5
+  - label: 使用
+    value: use
+    color: F4A460
+sort_no: 120
+type: select

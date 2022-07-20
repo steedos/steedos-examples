@@ -1,0 +1,13 @@
+name: sum__c
+data_type: number
+label: 分数汇总
+group: 会后评分
+precision: 18
+scale: 2
+sort_no: 200
+summary_field: score__c
+summary_object: meeting_score__c
+summary_type: sum
+type: summary
+visible_on: "{{formData && formData.type__c === '一般会议' ? false : true}}"
+hidden: true

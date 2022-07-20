@@ -1,0 +1,8 @@
+name: staff__c
+is_wide: true
+label: 内部参会人员
+multiple: true
+reference_to: users
+sort_no: 170
+required: true
+type: lookup

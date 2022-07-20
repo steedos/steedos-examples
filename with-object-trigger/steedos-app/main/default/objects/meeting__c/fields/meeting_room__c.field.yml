@@ -1,0 +1,7 @@
+name: meeting_room__c
+is_wide: false
+label: 会议室
+reference_to: meeting_room__c
+required: true
+sort_no: 120
+type: lookup

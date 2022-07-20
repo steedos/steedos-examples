@@ -1,0 +1,5 @@
+name: dining__c
+group: 会议任务
+label: 用餐
+sort_no: 220
+type: boolean

@@ -1,0 +1,6 @@
+name: sort__c
+label: 排序号
+precision: 18
+scale: 0
+sort_no: 150
+type: number

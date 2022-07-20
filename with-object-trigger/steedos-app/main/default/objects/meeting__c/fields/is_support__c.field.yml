@@ -1,0 +1,5 @@
+name: is_support__c
+label: 是否需视频终端支持
+required: false
+sort_no: 125
+type: boolean

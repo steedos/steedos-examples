@@ -1,0 +1,21 @@
+name: 会议
+code: meeting
+description: 内部会议管理模块。
+icon_slds: answer_best
+is_creator: true
+is_new_window: false
+is_use_ie: false
+is_use_iframe: false
+mobile: true
+mobile_objects:
+  - meeting__c
+  - meeting_room__c
+  - tasks
+  - events
+objects:
+  - meeting__c
+  - meeting_room__c
+  - tasks
+  - events
+sort: 9100
+visible: true

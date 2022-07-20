@@ -1,0 +1,14 @@
+{
+  "name": "project-template-workspaces",
+  "version": "0.0.1",
+  "private": true,
+  "workspaces": ["steedos-packages/*"],
+  "scripts": {
+    "docker": "docker-compose up -d",
+    "docker:logs": "docker-compose logs -f",
+    "start": "steedos start"
+  },
+  "dependencies": {
+    "@steedos/service-community": "^2.2"
+  }
+}

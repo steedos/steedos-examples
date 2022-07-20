@@ -2,7 +2,7 @@ version: "3.9"
 
 services:
   
-  # 可选：使用 docker 启动平台。
+  # 可选：使用 docker 启动平台。需先停止 nodejs 启动的服务，避免冲突
   steedos:
     image: steedos/steedos-enterprise:2.2
     command: "yarn start"
@@ -28,7 +28,7 @@ services:
         condition: service_started
       mongodb:
         condition: service_healthy
-    
+
   # 缓存服务
   redis:
     image: redis:6.2

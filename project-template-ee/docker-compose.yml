@@ -11,6 +11,7 @@ services:
     volumes:
       - "steedos-installed-packages:/app/.steedos"
       - "steedos-data:/app/storage"
+      # 可选，软件包映射到本地文件夹
       - "./steedos-packages:/app/steedos-packages"
       - "./steedos.config.js:/app/steedos.config.js"
     environment:

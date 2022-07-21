@@ -1,4 +1,4 @@
-This is a [Steedos](https://www.steedos.com/) project bootstrapped with [`create-steedos-app`](https://github.com/steedos/steedos-platform/tree/master/packages/create-steedos-app).
+This is a [Steedos](https://www.steedos.com/) project bootstrapped with [`Docker`](https://www.steedos.com/docs/deploy/deploy-docker).
 
 ## Getting Started
 

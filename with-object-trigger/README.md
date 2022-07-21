@@ -2,13 +2,27 @@ This is a [Steedos](https://www.steedos.com/) project bootstrapped with [`create
 
 ## Getting Started
 
-### Start mongodb & redis service
+### Start mongodb & redis service & steedos service
 
 ```bash
-docker-compose up
+docker-compose up -d
 ```
 
-### Start steedos service
+### Logs for steedos service
+
+```bash
+docker-compose ps
+```
+
+Copy the `CONTAINER ID` of `steedos/steedos-community`.
+
+```bash
+docker logs -tf d08f0b323ee8
+```
+
+`d08f0b323ee8` is the `CONTAINER ID` copied above.
+
+### Open With Browser
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 

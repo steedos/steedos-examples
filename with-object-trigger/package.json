@@ -1,8 +1,12 @@
 {
-  "name": "with-object-trigger",
+  "name": "@steedos-examples/with-object-trigger",
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "start": "yarn down && yarn up && yarn logs",
+    "up": "docker-compose up -d",
+    "down": "docker-compose down",
+    "logs": "docker logs -tf with-object-trigger-steedos-1"
   }
 }
 

@@ -1,8 +1,11 @@
 This is a [Steedos](https://www.steedos.com/) project bootstrapped with [`Docker`](https://www.steedos.com/docs/deploy/deploy-docker).
 
+Learn [Documentation for this example](https://www.steedos.com/docs/developer/trigger) for more.
+
 ## Getting Started
 
 The command bellow will start mongodb, redis service and steedos service on Docker.
+
 You can down the docker just by type `CTRL + c` and restart it by the command bellow again.
 
 ```bash

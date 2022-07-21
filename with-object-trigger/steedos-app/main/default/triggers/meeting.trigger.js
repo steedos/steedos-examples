@@ -24,8 +24,9 @@ module.exports = {
 
     beforeDelete: async function(){
         const id = this.id;
-        await manager.deleteRelatedEvents(id);
-        await manager.deleteRelatedTasks(id);
+        const spaceId = this.spaceId;
+        await manager.deleteRelatedEvents(id, spaceId);
+        await manager.deleteRelatedTasks(id, spaceId);
     },
 
     beforeFind: async function(){
@@ -45,6 +46,7 @@ module.exports = {
     },
 
     afterDelete: async function(){
+
     },
 
 }

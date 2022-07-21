@@ -1,12 +1,12 @@
 {
-  "name": "with-mongodb-field-encryption",
+  "name": "with-email",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "start": "steedos start"
   },
   "dependencies": {
-    "@steedos/service-enterprise": "^2.2"
+    "@steedos/service-community": "^2.2"
   },
   "devDependencies": {
     "eslint": "8.20.0"

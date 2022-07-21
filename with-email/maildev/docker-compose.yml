@@ -1,0 +1,7 @@
+services:
+  maildev:
+    container_name: maildev
+    image: maildev/maildev:latest
+    ports:
+      - "4000:1080"
+      - "4025:1025"

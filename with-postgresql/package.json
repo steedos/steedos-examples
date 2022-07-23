@@ -3,9 +3,10 @@
   "version": "2.2.55-beta.4",
   "private": true,
   "scripts": {
-    "start": "yarn down && yarn up && yarn start-pg  && yarn start-pgadmin && steedos start",
+    "start": "yarn stop && yarn down && yarn up && yarn start-pg  && yarn start-pgadmin && steedos start",
     "up": "docker-compose up -d",
     "down": "docker-compose down",
+    "stop": "yarn stop-pg && yarn stop-pgadmin",
     "start-pg": "docker start postgresql",
     "stop-pg": "docker stop postgresql",
     "start-pgadmin": "docker start my-pgadmin",

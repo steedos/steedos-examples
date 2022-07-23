@@ -28,14 +28,14 @@ services:
   postgres:
     image: postgres:14.4
     command: "docker run --name postgresql -e POSTGRES_USER=myusername -e POSTGRES_PASSWORD=mypassword -p 5432:5432 -v /data:/var/lib/postgresql/data -d postgres"
-    restart: on-failure
+    # restart: on-failure
     ports:
       - 5432:5432
 
   pgadmin4:
     image: dpage/pgadmin4:latest
     command: "docker run --name my-pgadmin -p 82:80 -e 'PGADMIN_DEFAULT_EMAIL=user@domain.local' -e 'PGADMIN_DEFAULT_PASSWORD=postgresmaster' -d dpage/pgadmin4"
-    restart: on-failure
+    # restart: on-failure
     ports:
       - 82:80
 

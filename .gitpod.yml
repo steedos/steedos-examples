@@ -11,6 +11,12 @@ ports:
   - port: 27017
     onOpen: ignore
     visibility: public
+  - port: 5432
+    onOpen: ignore
+    visibility: public
+  - port: 82
+    onOpen: open-browser
+    visibility: public
 # List the start up tasks. You can start them in parallel in multiple terminals. See https://www.gitpod.io/docs/config-start-tasks/
 tasks:
   - name: Steedos

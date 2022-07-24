@@ -1,0 +1,27 @@
+version: "3.9"
+
+services:
+
+  redis:
+    image: redis:6.2
+    command: "redis-server --save \"\" --appendonly no --loglevel warning"
+    ports:
+      - "6379:6379"
+  
+  mongodb:
+    image: 'bitnami/mongodb:4.4'
+    restart: on-failure
+    ports:
+      - 27017:27017
+    environment:
+      - MONGODB_REPLICA_SET_MODE=primary
+      - MONGODB_INITIAL_PRIMARY_HOST=mongodb
+      - MONGODB_REPLICA_SET_NAME=steedos
+      - MONGODB_ENABLE_JOURNAL=true
+      - MONGODB_ADVERTISED_HOSTNAME=mongodb
+      - ALLOW_EMPTY_PASSWORD=yes
+    volumes:
+      - 'steedos-mongo-data:/bitnami'
+
+volumes:
+  steedos-mongo-data:

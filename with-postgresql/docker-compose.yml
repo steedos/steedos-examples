@@ -1,0 +1,43 @@
+version: "3.9"
+
+services:
+
+  redis:
+    image: redis:6.2
+    command: "redis-server --save \"\" --appendonly no --loglevel warning"
+    ports:
+      - "6379:6379"
+  
+  mongodb:
+    image: 'bitnami/mongodb:4.4'
+    restart: on-failure
+    ports:
+      - 27017:27017
+    environment:
+      - MONGODB_REPLICA_SET_MODE=primary
+      - MONGODB_PORT_NUMBER=${MONGODB_PORT_NUMBER:-27017}
+      - MONGODB_INITIAL_PRIMARY_HOST=${MONGODB_INITIAL_PRIMARY_HOST:-mongodb}
+      - MONGODB_INITIAL_PRIMARY_PORT_NUMBER=${MONGODB_INITIAL_PRIMARY_PORT_NUMBER:-27017}
+      - MONGODB_REPLICA_SET_NAME=${MONGODB_REPLICA_SET_NAME:-steedos}
+      - MONGODB_ENABLE_JOURNAL=${MONGODB_ENABLE_JOURNAL:-true}
+      - MONGODB_ADVERTISED_HOSTNAME=${MONGODB_ADVERTISED_HOSTNAME:-mongodb}
+      - ALLOW_EMPTY_PASSWORD=${ALLOW_EMPTY_PASSWORD:-yes}
+    volumes:
+      - 'steedos-mongo-data:/bitnami'
+
+  postgres:
+    image: postgres:14.4
+    command: "docker run --name postgresql -e POSTGRES_USER=myusername -e POSTGRES_PASSWORD=mypassword -p 5432:5432 -v /data:/var/lib/postgresql/data -d postgres"
+    # restart: on-failure
+    ports:
+      - 5432:5432
+
+  pgadmin4:
+    image: dpage/pgadmin4:latest
+    command: "docker run --name my-pgadmin -p 82:80 -e 'PGADMIN_DEFAULT_EMAIL=user@domain.local' -e 'PGADMIN_DEFAULT_PASSWORD=postgresmaster' -d dpage/pgadmin4"
+    # restart: on-failure
+    ports:
+      - 82:80
+
+volumes:
+  steedos-mongo-data:

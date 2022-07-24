@@ -1,6 +1,7 @@
 {
-  "name": "my-steedos-package",
-  "version": "0.1.0",
+  "name": "steedos-app-default",
+  "version": "0.0.1",
+  "description": "An Example For Object Trigger",
   "main": "package.service.js",
-  "private": true
+  "license": "MIT"
 }

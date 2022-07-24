@@ -29,18 +29,6 @@ async function validData(doc) {
 }
 
 /**
- * 获取内部参会人员中的领导
- * @param {string} spaceId 
- * @param {array} users 人员id
- * @returns array
- */
-async function getLeaders(spaceId, users) {
-    const spaceUserObj = objectql.getObject('space_users');
-    const spaceUsers = await spaceUserObj.find({ filters: [['space', '=', spaceId], ['position', 'contains', '领导'], ['user', 'in', users]] });
-    return spaceUsers;
-}
-
-/**
  * 为每个人创建日程进行会议通知
  * @param {*} meetingId 
  */
@@ -123,7 +111,6 @@ async function dispatchTask(meetingId) {
             "ids": [meetingId]
         }
     };
-    console.log("==doc.dining_executive__c ==", doc.dining_executive__c );
     const fromUser = await userObj.findOne(fromUserId);
     for (const userId of (doc.dining_executive__c || [])) {
         // 如果已经创建则不重复创建
@@ -157,20 +144,73 @@ async function dispatchTask(meetingId) {
 }
 
 /**
- * 会议类型根据参会人员中是否有领导自动计算
+ * 删除会议关联的日程及其通知记录
+ * @param {*} meetingId 
  * @param {*} spaceId 
- * @param {*} users 
- * @returns 领导会议/一般会议
  */
-async function getMeetingType(spaceId, users) {
-    const leaders = await getLeaders(spaceId, users || []);
-    return (leaders.length > 0) ? '领导会议' : '一般会议';
+async function deleteRelatedEvents(meetingId, spaceId) {
+    const objectName = "meeting__c";
+    const eventsObj = objectql.getObject('events');
+    const driver = objectql.getDataSource("default").adapter;
+    let filters = [['space', '=', spaceId], ['related_to.o', '=', 'meeting__c'], ['related_to.ids', '=', meetingId]];
+    const eventRecords = await eventsObj.find({ filters, fields: ["_id"] });
+    const eventIds = eventRecords.map((e)=> { return e._id; });
+
+    let bulkNotifications = await driver.collection("notifications").initializeUnorderedBulkOp();
+    bulkNotifications.find({
+        "related_to.o": "events",
+        "related_to.ids": eventIds
+    }).delete();
+    await bulkNotifications.execute().catch(function (error) {
+        console.error("日程通知数据删除失败，错误信息：", error);
+    });
+    let bulkEvents = await driver.collection("events").initializeUnorderedBulkOp();
+    bulkEvents.find({
+        "space": spaceId,
+        "related_to.o": objectName,
+        "related_to.ids": meetingId
+    }).delete();
+    await bulkEvents.execute().catch(function (error) {
+        console.error("日程数据删除失败，错误信息：", error);
+    });
+}
+
+/**
+ * 删除会议关联的任务及其通知记录
+ * @param {*} meetingId 
+ * @param {*} spaceId 
+ */
+async function deleteRelatedTasks(meetingId, spaceId) {
+    const objectName = "meeting__c";
+    const tasksObj = objectql.getObject('tasks');
+    const driver = objectql.getDataSource("default").adapter;
+    let filters = [['space', '=', spaceId], ['related_to.o', '=', 'meeting__c'], ['related_to.ids', '=', meetingId]];
+    const taskRecords = await tasksObj.find({ filters, fields: ["_id"] });
+    const taskIds = taskRecords.map((e)=> { return e._id; });
+
+    let bulkNotifications = await driver.collection("notifications").initializeUnorderedBulkOp();
+    bulkNotifications.find({
+        "related_to.o": "tasks",
+        "related_to.ids": taskIds
+    }).delete();
+    await bulkNotifications.execute().catch(function (error) {
+        console.error("任务通知数据删除失败，错误信息：", error);
+    });
+    let bulkTasks = await driver.collection("tasks").initializeUnorderedBulkOp();
+    bulkTasks.find({
+        "space": spaceId,
+        "related_to.o": objectName,
+        "related_to.ids": meetingId
+    }).delete();
+    await bulkTasks.execute().catch(function (error) {
+        console.error("任务数据删除失败，错误信息：", error);
+    });
 }
 
 module.exports = {
     validData,
-    getLeaders,
     notifyUsers,
     dispatchTask,
-    getMeetingType
+    deleteRelatedEvents,
+    deleteRelatedTasks
 }

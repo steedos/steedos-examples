@@ -6,6 +6,12 @@ Learn [Documentation for this example](https://www.steedos.com/docs/admin/dataso
 
 ## Getting Started
 
+The command bellow will install the dependencies.
+
+```bash
+yarn
+```
+
 The command bellow will start mongodb, redis service, postgres and pgadmin4 service on [Docker](https://www.docker.com), and then it will start the steedos service auto.
 
 You can down all of service just by type `CTRL + c` and restart it by the command bellow again.

@@ -25,19 +25,6 @@ services:
     volumes:
       - 'steedos-mongo-data:/bitnami'
 
-  postgres:
-    image: postgres:14.4
-    command: "docker run --name postgresql -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=123456 -p 5432:5432 -v /data:/var/lib/postgresql/data -d postgres"
-    # restart: on-failure
-    ports:
-      - 5432:5432
-
-  pgadmin4:
-    image: dpage/pgadmin4:latest
-    command: "docker run --name my-pgadmin -p 82:80 -e PGADMIN_DEFAULT_EMAIL=user@domain.local -e PGADMIN_DEFAULT_PASSWORD=123456 -d dpage/pgadmin4"
-    # restart: on-failure
-    ports:
-      - 82:80
 
 volumes:
   steedos-mongo-data:

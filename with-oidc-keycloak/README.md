@@ -2,9 +2,10 @@ This is a [Steedos](https://www.steedos.com/) project bootstrapped with [`create
 
 ## Getting Started
 
-### Start keyclak & mongodb & redis service
+### Start keyclak
 
 ```bash
+cd keycloak
 docker-compose up
 ```
 
@@ -12,6 +13,12 @@ docker-compose up
 
 - Login into keycloak at `127.0.0.1:8080/admin`
 - Clients - Create Client ID: steedos-oidc-dev
+
+### Start mongodb & redis service
+
+```bash
+docker-compose up
+```
 
 ### Start steedos service
 

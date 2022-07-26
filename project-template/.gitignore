@@ -4,8 +4,6 @@
 
 **/node_modules
 
-.npmrc
-.yarnrc
 **/npm-error.log
 **/yarn-error.log
 **/lerna-debug.log
@@ -18,3 +16,4 @@ logs
 .steedos
 
 yarn.lock
+pnpm-lock.yaml

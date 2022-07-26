@@ -1,8 +1,7 @@
 version: '2'
 services:
   onlyoffice-documentserver:
-    build:
-      context: .
+    image: onlyoffice/documentserver
     container_name: onlyoffice-documentserver
     depends_on:
       - onlyoffice-postgresql
@@ -22,15 +21,15 @@ services:
     ports:
       - '80:80'
       - '443:443'
-    # stdin_open: true
-    # restart: always
-    # stop_grace_period: 60s
-    # # volumes:
-    #    - /var/www/onlyoffice/Data
-    #    - /var/log/onlyoffice
-    #    - /var/lib/onlyoffice/documentserver/App_Data/cache/files
-    #    - /var/www/onlyoffice/documentserver-example/public/files
-    #    - /usr/share/fonts
+    stdin_open: true
+    restart: always
+    stop_grace_period: 60s
+    volumes:
+       - /var/www/onlyoffice/Data
+       - /var/log/onlyoffice
+       - /var/lib/onlyoffice/documentserver/App_Data/cache/files
+       - /var/www/onlyoffice/documentserver-example/public/files
+       - /usr/share/fonts
        
   onlyoffice-rabbitmq:
     container_name: onlyoffice-rabbitmq

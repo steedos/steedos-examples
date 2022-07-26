@@ -1,0 +1,14 @@
+{
+  "name": "with-onlyoffice",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": "steedos start"
+  },
+  "dependencies": {
+    "@steedos/service-community": "2.2.54"
+  },
+  "devDependencies": {
+    "eslint": "8.20.0"
+  }
+}

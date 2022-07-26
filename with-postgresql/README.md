@@ -1,28 +1,33 @@
-This is a [Steedos](https://www.steedos.com/) project bootstrapped with [`create-steedos-app`](https://github.com/steedos/steedos-platform/tree/master/packages/create-steedos-app).
+PostgreSQL 数据源
+===
+
+本示例以 keycloak 数据库为例，演示如何使用华炎魔方配置外部数据源，连接第三方业务系统。
 
 This is a example about how to use [postgresql] (https://www.postgresql.org/) as a third party datasource of Steedos
 
 Learn [Documentation for this example](https://www.steedos.com/docs/admin/datasource) for more.
 
-## Getting Started
+### Start keyclak
 
-The command bellow will install the dependencies.
+```bash
+cd keycloak
+docker-compose up
+```
+
+Now you can login into keycloak at `127.0.0.1:8080/admin`
+
+### Start mongodb & redis service
+
+```bash
+docker-compose up
+```
+
+### Start steedos service
 
 ```bash
 yarn
-```
-
-The command bellow will start mongodb, redis service, postgres and pgadmin4 service on [Docker](https://www.docker.com), and then it will start the steedos service auto.
-
-You can down all of service just by type `CTRL + c` and restart it by the command bellow again.
-
-```bash
 yarn start
 ```
-
-Open [http://localhost:5000](http://localhost:5000) with your browser to see the result for steedos service.
-
-Open [http://localhost:82](http://localhost:82) with your browser to see the result for pgadmin4 service which can connect to postgres.
 
 ## Learn More
 

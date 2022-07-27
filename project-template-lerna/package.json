@@ -2,11 +2,12 @@
   "name": "project-template-workspaces",
   "version": "0.0.1",
   "private": true,
-  "workspaces": ["steedos-packages/*"],
-  "scripts": {
+  "workspaces": ["steedos-packages/*"],  "scripts": {
     "bootstrap": "lerna bootstrap",
     "build": "lerna run build",
-    "start": "steedos start"
+    "start": "steedos start",
+    "beta": "lerna publish prerelease --preid beta --force-publish --exact --pre-dist-tag beta",
+    "release": "lerna publish --force-publish --exact --dist-tag next"
   },
   "dependencies": {
     "@steedos/service-community": "^2.2"

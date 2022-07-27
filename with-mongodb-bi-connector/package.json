@@ -1,0 +1,14 @@
+{
+  "name": "with-mongodb-bi-connector",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": "steedos start"
+  },
+  "dependencies": {
+    "@steedos/service-enterprise": "2.2.55-beta.12"
+  },
+  "devDependencies": {
+    "eslint": "8.20.0"
+  }
+}

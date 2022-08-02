@@ -5,9 +5,11 @@
  * @LastEditTime: 2022-08-01 18:18:44
  * @Description: 
 -->
-# 服务启动后自动初始化系统数据
+# 服务启动后自动导入初始数据
 
-### 提供importData函数支持导入.data.json、.data.csv、.flow.json数据
+## 功能说明
+
+提供importData函数支持导入.data.json、.data.csv、.flow.json数据
 
 - 比如在自定义的软件包package.service.js中监听系统初始化事件或者服务启动时调用importData导入软件包中的数据：
 
@@ -44,6 +46,8 @@ export async function importData(filePath: string, onlyInsert: boolean = true) {
     // 函数体
 }
 ```
+
+## 使用向导
 
 ### 启动 mongodb 和 redis 
 

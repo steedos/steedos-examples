@@ -5,10 +5,7 @@
  * @LastEditTime: 2022-08-01 18:18:44
  * @Description: 
 -->
-## 入门
-
-### 功能说明
-- 服务启动后自动初始化系统数据
+# 服务启动后自动初始化系统数据
 
 ### 提供importData函数支持导入.data.json、.data.csv、.flow.json数据
 

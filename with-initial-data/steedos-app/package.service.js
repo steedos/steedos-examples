@@ -2,7 +2,7 @@
  * @Author: sunhaolin@hotoa.com
  * @Date: 2022-07-21 16:17:04
  * @LastEditors: sunhaolin@hotoa.com
- * @LastEditTime: 2022-08-01 18:15:42
+ * @LastEditTime: 2022-08-03 10:22:13
  * @Description: 
  */
 "use strict";
@@ -44,9 +44,15 @@ module.exports = {
 	 * Events
 	 */
 	events: {
-		// 系统初始化成功
+		// 系统通过环境变量初始化成功
 		'service-cloud-init.succeeded': async function (ctx) {
 			await importData(path.join(__dirname, 'main', 'default', 'data'));
+		},
+		// 系统通过注册用户初始化成功
+		"space.initialized": {
+			async handler() {
+				await importData(path.join(__dirname, 'main', 'default', 'data'));
+			}
 		}
 	},
 

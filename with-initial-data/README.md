@@ -2,7 +2,7 @@
  * @Author: sunhaolin@hotoa.com
  * @Date: 2022-08-01 16:58:45
  * @LastEditors: sunhaolin@hotoa.com
- * @LastEditTime: 2022-08-01 18:18:44
+ * @LastEditTime: 2022-08-03 10:21:17
  * @Description: 
 -->
 # 服务启动后自动导入初始数据
@@ -21,9 +21,15 @@ module.exports = {
      * Events
      */
     events: {
-        // 系统初始化成功
+        // 系统通过环境变量初始化成功
         'service-cloud-init.succeeded': async function (ctx) {
             await importData(path.join(__dirname, 'main', 'default', 'data'));
+        },
+        // 系统通过注册用户初始化成功
+        "space.initialized": {
+            async handler() {
+                await importData(path.join(__dirname, 'main', 'default', 'data'));
+            }
         }
     },
     /**

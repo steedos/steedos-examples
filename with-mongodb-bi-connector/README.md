@@ -6,11 +6,9 @@
  * @Description: 
 -->
 
-## 入门
+## MongoDB BI Connector
 
-### 功能说明
-
-- 支持使用SQL语句查询mongodb数据库
+支持使用SQL语句查询mongodb数据库
 
 ### 启动 mongodb 和 redis 
 

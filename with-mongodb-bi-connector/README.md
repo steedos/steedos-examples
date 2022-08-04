@@ -8,7 +8,7 @@
 
 ## MongoDB BI Connector
 
-支持使用SQL语句查询mongodb数据库
+利用 [MongoDB BI Connector](https://www.mongodb.com/docs/bi-connector/current/), 使用SQL语句查询 mongodb 数据库。
 
 ### 启动 mongodb 和 redis 
 

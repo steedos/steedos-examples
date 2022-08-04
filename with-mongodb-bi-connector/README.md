@@ -20,7 +20,7 @@ docker-compose up
 
 修改 steedos.config.js
 ```
-		broker.createService(require("@steedos/ee_mongodb-bi-connector"));
+  broker.createService(require("@steedos/ee_mongodb-bi-connector"));
 ```
 
 ### 启动 steedos

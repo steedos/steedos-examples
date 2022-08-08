@@ -1,0 +1,13 @@
+name: consent_required
+column_name: consent_required
+filterable: false
+generated: false
+index: false
+is_name: false
+is_wide: false
+label: Consent Required
+primary: false
+required: false
+sort_no: 160
+sortable: false
+type: toggle

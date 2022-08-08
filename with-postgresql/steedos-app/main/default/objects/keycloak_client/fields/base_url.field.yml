@@ -1,0 +1,16 @@
+name: base_url
+column_name: base_url
+filterable: false
+generated: false
+index: false
+inlineHelpText: >-
+  Default URL to use when the auth server needs to redirect or link back to the
+  client.
+is_name: false
+is_wide: false
+label: Base URL
+primary: false
+required: false
+sort_no: 230
+sortable: false
+type: text

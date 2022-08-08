@@ -1,11 +1,12 @@
 {
   "name": "@steedos-examples/with-postgresql",
-  "version": "2.2.55-beta.4",
+  "version": "2.2.55-beta.22",
   "private": true,
   "scripts": {
     "start": "steedos start"
   },
   "dependencies": {
-    "@steedos/service-enterprise": "2.2.55-beta.5"
+    "@steedos/service-enterprise": "2.2.55-beta.22",
+    "uuid": "^8.3.2"
   }
 }

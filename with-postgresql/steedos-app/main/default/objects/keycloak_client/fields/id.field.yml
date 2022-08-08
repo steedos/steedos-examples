@@ -1,0 +1,13 @@
+name: id
+column_name: id
+filterable: false
+generated: false
+index: false
+is_name: false
+is_wide: false
+label: ID
+primary: true
+required: false
+sort_no: 110
+sortable: false
+type: text

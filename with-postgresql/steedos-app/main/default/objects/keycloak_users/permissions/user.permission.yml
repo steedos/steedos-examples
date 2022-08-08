@@ -1,0 +1,35 @@
+name: keycloak_users.用户
+allowCreate: true
+allowCreateFiles: true
+allowDelete: true
+allowDeleteFiles: true
+allowEdit: true
+allowEditFiles: true
+allowRead: true
+allowReadFiles: true
+modifyAllRecords: false
+permission_set_id: user
+viewAllFiles: true
+viewAllRecords: false
+field_permissions:
+  - field: id
+    readable: true
+    editable: false
+  - field: email
+    readable: true
+    editable: true
+  - field: email_verified
+    readable: true
+    editable: true
+  - field: enabled
+    readable: true
+    editable: true
+  - field: first_name
+    readable: true
+    editable: true
+  - field: last_name
+    readable: true
+    editable: true
+  - field: username
+    readable: true
+    editable: true

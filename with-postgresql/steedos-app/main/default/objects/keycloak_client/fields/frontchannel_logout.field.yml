@@ -1,0 +1,16 @@
+name: frontchannel_logout
+column_name: frontchannel_logout
+filterable: false
+generated: false
+index: false
+inlineHelpText: >-
+  When true, logout requires a browser redirect to client. When false, server
+  performs a background invocation for logout.
+is_name: false
+is_wide: false
+label: Front Channel Logout
+primary: false
+required: false
+sort_no: 210
+sortable: false
+type: toggle

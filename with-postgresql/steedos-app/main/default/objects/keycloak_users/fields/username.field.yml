@@ -1,0 +1,13 @@
+name: username
+column_name: username
+filterable: false
+generated: false
+index: false
+is_name: false
+is_wide: false
+label: Username
+primary: false
+required: true
+sort_no: 170
+sortable: false
+type: text

@@ -1,0 +1,13 @@
+name: last_name
+column_name: last_name
+filterable: false
+generated: false
+index: false
+is_name: false
+is_wide: false
+label: Last Name
+primary: false
+required: false
+sort_no: 160
+sortable: false
+type: text

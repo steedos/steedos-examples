@@ -1,0 +1,13 @@
+name: direct_access_grants_enabled
+column_name: direct_access_grants_enabled
+filterable: false
+generated: false
+index: false
+is_name: false
+is_wide: false
+label: Direct Access Grants Enabled
+primary: false
+required: false
+sort_no: 200
+sortable: false
+type: toggle

@@ -1,0 +1,14 @@
+name: root_url
+column_name: root_url
+filterable: false
+generated: false
+index: false
+inlineHelpText: Root URL appended to relative URLs
+is_name: false
+is_wide: false
+label: Root URL
+primary: false
+required: false
+sort_no: 220
+sortable: false
+type: text

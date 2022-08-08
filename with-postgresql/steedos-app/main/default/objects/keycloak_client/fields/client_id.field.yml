@@ -1,0 +1,13 @@
+name: client_id
+column_name: client_id
+filterable: false
+generated: false
+index: false
+is_name: true
+is_wide: false
+label: Client ID
+primary: false
+required: true
+sort_no: 120
+sortable: false
+type: text

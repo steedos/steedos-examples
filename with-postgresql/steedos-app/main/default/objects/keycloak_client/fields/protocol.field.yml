@@ -1,0 +1,19 @@
+name: protocol
+column_name: protocol
+filterable: false
+generated: false
+index: false
+is_name: false
+is_wide: false
+label: Client Protocol
+multiple: false
+options:
+  - label: openid-connect
+    value: openid-connect
+  - label: saml
+    value: saml
+primary: false
+required: false
+sort_no: 170
+sortable: false
+type: select

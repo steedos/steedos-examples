@@ -1,0 +1,19 @@
+name: all
+columns:
+  - field: client_id
+  - field: enabled
+  - field: base_url
+filter_scope: space
+filters: []
+label: 所有
+mobile_columns:
+  - field: client_id
+  - field: enabled
+  - field: base_url
+scrolling_mode: standard
+shared: true
+sort:
+  - field_name: client_id
+    order: asc
+sort_no: 100
+type: grid

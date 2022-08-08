@@ -1,0 +1,13 @@
+name: email
+column_name: email
+filterable: false
+generated: false
+index: false
+is_name: false
+is_wide: false
+label: Email
+primary: false
+required: false
+sort_no: 120
+sortable: false
+type: email

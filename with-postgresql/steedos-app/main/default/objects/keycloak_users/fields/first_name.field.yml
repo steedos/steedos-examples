@@ -1,0 +1,13 @@
+name: first_name
+column_name: first_name
+filterable: false
+generated: false
+index: false
+is_name: false
+is_wide: false
+label: First Name
+primary: false
+required: false
+sort_no: 150
+sortable: false
+type: text

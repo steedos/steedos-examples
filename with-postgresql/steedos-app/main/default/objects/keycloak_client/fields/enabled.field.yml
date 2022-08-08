@@ -1,0 +1,13 @@
+name: enabled
+column_name: enabled
+filterable: false
+generated: false
+index: false
+is_name: false
+is_wide: false
+label: Enabled
+primary: false
+required: false
+sort_no: 140
+sortable: false
+type: toggle

@@ -1,0 +1,13 @@
+name: email_verified
+column_name: email_verified
+filterable: false
+generated: false
+index: false
+is_name: false
+is_wide: false
+label: Email Verified
+primary: false
+required: false
+sort_no: 130
+sortable: false
+type: toggle

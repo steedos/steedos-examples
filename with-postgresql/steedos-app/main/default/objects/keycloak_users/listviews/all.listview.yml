@@ -1,0 +1,21 @@
+name: all
+columns:
+  - field: id
+  - field: username
+  - field: email
+  - field: last_name
+  - field: first_name
+filter_scope: space
+filters: []
+label: 所有
+mobile_columns:
+  - field: id
+  - field: email
+  - field: username
+  - field: last_name
+  - field: first_name
+scrolling_mode: standard
+shared: true
+sort: []
+sort_no: 100
+type: grid

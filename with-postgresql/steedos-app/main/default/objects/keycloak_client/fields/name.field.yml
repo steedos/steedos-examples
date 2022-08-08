@@ -1,0 +1,7 @@
+name: name
+column_name: name
+index: true
+label: Name
+required: true
+sort_no: 100
+type: text

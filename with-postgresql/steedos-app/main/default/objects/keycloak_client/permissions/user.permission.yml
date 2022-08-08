@@ -1,0 +1,56 @@
+name: Clients.用户
+allowCreate: true
+allowCreateFiles: true
+allowDelete: true
+allowDeleteFiles: true
+allowEdit: true
+allowEditFiles: true
+allowRead: true
+allowReadFiles: true
+modifyAllRecords: false
+permission_set_id: user
+viewAllFiles: true
+viewAllRecords: false
+field_permissions:
+  - field: name
+    readable: true
+    editable: true
+  - field: id
+    readable: false
+    editable: false
+  - field: client_id
+    readable: true
+    editable: true
+  - field: description
+    readable: true
+    editable: true
+  - field: enabled
+    readable: true
+    editable: true
+  - field: always_display_in_console
+    readable: true
+    editable: true
+  - field: consent_required
+    readable: true
+    editable: true
+  - field: protocol
+    readable: true
+    editable: true
+  - field: standard_flow_enabled
+    readable: true
+    editable: true
+  - field: implicit_flow_enabled
+    readable: true
+    editable: true
+  - field: direct_access_grants_enabled
+    readable: true
+    editable: true
+  - field: frontchannel_logout
+    readable: true
+    editable: true
+  - field: root_url
+    readable: true
+    editable: true
+  - field: base_url
+    readable: true
+    editable: true

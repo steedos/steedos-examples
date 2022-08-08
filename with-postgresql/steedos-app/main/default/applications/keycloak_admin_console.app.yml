@@ -1,0 +1,16 @@
+name: Keycloak Admin Console
+code: keycloak_admin_console
+icon_slds: account
+is_creator: true
+is_new_window: false
+is_use_ie: false
+is_use_iframe: false
+mobile: true
+mobile_objects:
+  - keycloak_client
+  - keycloak_users
+objects:
+  - keycloak_client
+  - keycloak_users
+sort: 9100
+visible: true

@@ -1,0 +1,13 @@
+name: standard_flow_enabled
+column_name: standard_flow_enabled
+filterable: false
+generated: false
+index: false
+is_name: false
+is_wide: false
+label: Standard Flow Enabled
+primary: false
+required: false
+sort_no: 180
+sortable: false
+type: toggle

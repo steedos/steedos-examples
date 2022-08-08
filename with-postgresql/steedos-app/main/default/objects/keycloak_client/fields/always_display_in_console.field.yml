@@ -1,0 +1,13 @@
+name: always_display_in_console
+column_name: always_display_in_console
+filterable: false
+generated: false
+index: false
+is_name: false
+is_wide: false
+label: Always Display in Console
+primary: false
+required: false
+sort_no: 150
+sortable: false
+type: toggle

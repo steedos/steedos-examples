@@ -1,4 +1,5 @@
-name: Keycloak Admin Console
+name: Keycloak Admin 
+description: 使用华炎魔方连接 Keycloak 数据库
 code: keycloak_admin_console
 icon_slds: account
 is_creator: true

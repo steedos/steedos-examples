@@ -6,7 +6,7 @@
     "start": "steedos start"
   },
   "dependencies": {
-    "@steedos/service-enterprise": "2.2.55-beta.16"
+    "@steedos/service-enterprise": "^2.2.55"
   },
   "devDependencies": {
     "eslint": "8.20.0"

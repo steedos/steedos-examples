@@ -11,7 +11,6 @@
 **/lerna-debug.log
 
 storage
-dist
 logs
 
 .env.local

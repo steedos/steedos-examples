@@ -1,0 +1,7 @@
+{
+  "name": "amis-custom-components",
+  "version": "0.1.0",
+  "description": "Examples of custom components for amis",
+  "main": "package.service.js",
+  "private": true
+}

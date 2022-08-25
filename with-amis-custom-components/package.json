@@ -1,0 +1,14 @@
+{
+  "name": "@steedos-examples/with-amis-custom-components",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": "steedos start"
+  },
+  "dependencies": {
+    "@steedos/service-community": "next"
+  },
+  "devDependencies": {
+    "eslint": "8.19.0"
+  }
+}

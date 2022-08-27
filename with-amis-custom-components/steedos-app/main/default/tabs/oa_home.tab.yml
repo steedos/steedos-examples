@@ -1,0 +1,7 @@
+name: oa_home
+desktop: true
+icon: home
+label: 首页
+mobile: true
+page: custom_component
+type: page

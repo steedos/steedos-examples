@@ -17,4 +17,6 @@ objects:
   - tasks
   - reports
 sort: 50
+tabs:
+  - oa_home
 visible: true

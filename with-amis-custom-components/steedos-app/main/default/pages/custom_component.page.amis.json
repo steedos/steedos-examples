@@ -1,0 +1,25 @@
+{
+    "type": "page",
+    "title": "Welcome to Steedos",
+    "body": [
+        {
+            "type": "example-hello",
+            "label": "哈喽",
+            "title": "您好",
+            "content": "欢迎使用华炎魔方微页面。",
+            "id": "u:42b2ea377408"
+        }
+    ],
+    "regions": [
+        "body"
+    ],
+    "data": {
+        "recordId": "",
+        "initialValues": {},
+        "appId": "builder",
+        "title": "",
+        "context": {
+            "rootUrl": "https://5000-steedos-steedosexamples-k14zqmxpayd.ws-us63.gitpod.io"
+        }
+    }
+}

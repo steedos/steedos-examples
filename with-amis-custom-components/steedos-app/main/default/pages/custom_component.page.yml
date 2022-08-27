@@ -1,0 +1,7 @@
+name: custom_component
+is_active: true
+label: 自定义组件
+pageAssignments: []
+render_engine: amis
+type: app
+widgets: []

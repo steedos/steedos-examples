@@ -48,7 +48,7 @@ Open [http://localhost:5000](http://localhost:5000) with your browser to see the
 
 ## 资产包开发
 
-上述配置的资产包是在独立项目中单独开发后发布到npm仓库中的，其源码在 https://github.com/steedos/steedos-widgets/tree/master/packages/example。
+上述配置的资产包是在独立项目中单独开发后发布到npm仓库中的，其源码在 https://github.com/steedos/steedos-widgets/tree/master/packages/example 。
 
 资产包中引用了开发好的自定义组件发布到npm仓库后的地址，即以下示例中的 `packages.urls`。
 

@@ -44,7 +44,7 @@ Open [http://localhost:5000](http://localhost:5000) with your browser to see the
 
 运行该示例项目后注册账户并登录，即可在“协同办公”应用的首页看到一个 `Hello World` 自定义组件的渲染效果。
 
-可以在设置应用的"用户界面->微页面"找到名为“自定义组件”的微页面，进入微页面详细页面点击右上角的“自定义”按钮后再点击“设计器”按钮即可在设计器中看到一个名为“哈喽”的自定义组织集成到设计器中了。
+可以在设置应用的"用户界面->微页面"找到名为“自定义组件”的微页面，进入微页面详细页面点击右上角的“自定义”按钮后再点击“设计器”按钮即可在设计器中看到一个名为“哈喽”的自定义组件集成到设计器中了。
 
 ## 资产包开发
 
@@ -79,7 +79,7 @@ Open [http://localhost:5000](http://localhost:5000) with your browser to see the
 }
 ```
 
-在资产包开发过程中，可以通过把环境变量 `STEEDOS_PUBLIC_PAGE_ASSETURLS` 配置为可访问的开发中的资产包地址，这样就可以在测试通过后再把资产包发布到npm仓库中。
+在资产包开发过程中，可以通过 `http-server` 把资产包公开为可访问的静态地址，然后在魔方项目中把环境变量 `STEEDOS_PUBLIC_PAGE_ASSETURLS` 配置为可访问的开发中的资产包地址，这样就可以在测试通过后再把资产包发布到npm仓库中。
 
 ```bash
 STEEDOS_PUBLIC_PAGE_ASSETURLS=https://8080-steedos-steedoswidgets-afuc7kqudss.ws-us63.gitpod.io/example/dist/assets-dev.json

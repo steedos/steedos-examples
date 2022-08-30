@@ -58,7 +58,8 @@ Open [http://localhost:5000](http://localhost:5000) with your browser to see the
         {
             "package": "@steedos-widgets/example",
             "urls": [
-                "https://unpkg.com/@steedos-widgets/example@0.0.4/dist/builder-example.umd.min.js"
+                "https://unpkg.com/@steedos-widgets/example@0.0.6/dist/builder-example.umd.min.js",
+                "https://unpkg.com/@steedos-widgets/example@0.0.6/dist/builder-example.umd.css"
             ],
             "library": "BuilderExample"
         }
@@ -69,10 +70,10 @@ Open [http://localhost:5000](http://localhost:5000) with your browser to see the
             "npm": {
                 "package": "@steedos-widgets/example"
             },
-            "url": "https://unpkg.com/@steedos-widgets/example@0.0.4/dist/meta.js",
+            "url": "https://unpkg.com/@steedos-widgets/example@0.0.6/dist/meta.js",
             "urls": {
-                "default": "https://unpkg.com/@steedos-widgets/example@0.0.4/dist/meta.js",
-                "design": "https://unpkg.com/@steedos-widgets/example@0.0.4/dist/meta.js"
+                "default": "https://unpkg.com/@steedos-widgets/example@0.0.6/dist/meta.js",
+                "design": "https://unpkg.com/@steedos-widgets/example@0.0.6/dist/meta.js"
             }
         }
     ]

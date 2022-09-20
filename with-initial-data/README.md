@@ -53,6 +53,24 @@ export async function importData(filePath: string, onlyInsert: boolean = true) {
 }
 ```
 
+## 使用mongodb cli 导出演示数据
+- json: 使用命令导出。例如: `mongoexport --uri="mongodb://192.168.3.31:27017/steedos-apps"  --jsonArray --collection=contract_types  --out=contract_types.data.json`
+- csv: 使用命令导出。例如: `mongoexport --uri="mongodb://192.168.3.31:27017/steedos-apps"  --collection=contract_types --type=csv --fields=name,code --out=contract_types.data.csv`
+
+## 编码要求
+json、csv中文件请使用`utf-8`编码
+
+## 示例，导出合同模块数据， 进入`main\default\data`文件夹后执行以下命令
+```
+mongoexport --uri="mongodb://192.168.3.31:27017/steedos-apps"  --collection=contract_types --type=csv --fields=name,code --out=contract_types.data.csv
+
+mongoexport --uri="mongodb://192.168.3.31:27017/steedos-apps" --jsonArray --collection=contracts  --out=contracts.data.json
+
+mongoexport --uri="mongodb://192.168.3.31:27017/steedos-apps" --jsonArray --collection=accounts  --out=accounts.data.json
+
+mongoexport --uri="mongodb://192.168.3.31:27017/steedos-apps" --jsonArray --collection=currency  --out=currency.data.json
+```
+
 ## 使用向导
 
 ### 启动 mongodb 和 redis 

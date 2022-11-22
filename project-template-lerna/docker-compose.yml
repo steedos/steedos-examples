@@ -3,25 +3,34 @@ version: "3.9"
 services:
 
   redis:
-    image: redis:6.2
-    command: "redis-server --save \"\" --appendonly no --loglevel warning"
+    image: ecr.aws.steedos.cn/dockerhub/bitnami/redis:6.2
+    command: "redis-server --requirepass ${REDIS_PASSWORD:-steedos}  --save \"\" --appendonly no --loglevel warning"
+    environment:
+      - REDIS_PASSWORD=${REDIS_PASSWORD:-steedos}
     ports:
       - "6379:6379"
   
   mongodb:
-    image: 'bitnami/mongodb:4.4'
-    restart: on-failure
+    image: ecr.aws.steedos.cn/dockerhub/bitnami/mongodb:4.4
     ports:
       - 27017:27017
     environment:
       - MONGODB_REPLICA_SET_MODE=primary
-      - MONGODB_INITIAL_PRIMARY_HOST=mongodb
-      - MONGODB_REPLICA_SET_NAME=steedos
-      - MONGODB_ENABLE_JOURNAL=true
-      - MONGODB_ADVERTISED_HOSTNAME=mongodb
-      - ALLOW_EMPTY_PASSWORD=yes
+      - MONGODB_ROOT_PASSWORD=${MONGODB_PASSWORD:-steedos}
+      - MONGODB_PORT_NUMBER=${MONGODB_PORT_NUMBER:-27017}
+      - MONGODB_INITIAL_PRIMARY_HOST=${MONGODB_INITIAL_PRIMARY_HOST:-mongodb}
+      - MONGODB_INITIAL_PRIMARY_PORT_NUMBER=${MONGODB_INITIAL_PRIMARY_PORT_NUMBER:-27017}
+      - MONGODB_REPLICA_SET_NAME=${MONGODB_REPLICA_SET_NAME:-steedos}
+      - MONGODB_REPLICA_SET_KEY=${MONGODB_REPLICA_SET_KEY:-steedos}
+      - MONGODB_ENABLE_JOURNAL=${MONGODB_ENABLE_JOURNAL:-true}
+      - MONGODB_ADVERTISED_HOSTNAME=${MONGODB_ADVERTISED_HOSTNAME:-mongodb}
+    healthcheck:
+      test: echo 'rs.status().ok' | mongo admin -u root -p ${MONGODB_PASSWORD:-steedos} --quiet | grep 1
+      interval: 10s
+      timeout: 10s
+      retries: 5
     volumes:
-      - 'steedos-mongo-data:/bitnami'
+      - 'steedos-mongodb-data:/bitnami'
 
 volumes:
-  steedos-mongo-data:
+  steedos-mongodb-data:

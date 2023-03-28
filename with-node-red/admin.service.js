@@ -89,10 +89,10 @@ module.exports = {
         RED.init(server, settings);
 
 		// Serve the editor UI from /red
-		app.use(settings.httpAdminRoot,RED.httpAdmin);
+		app.use(settings.httpAdminRoot, RED.httpAdmin);
 
 		// Serve the http nodes UI from /api
-		app.use(settings.httpNodeRoot,RED.httpNode);
+		app.use(settings.httpNodeRoot, RED.httpNode);
 
 		server.listen(1880);
 

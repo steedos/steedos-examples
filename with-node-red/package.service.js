@@ -45,7 +45,27 @@ module.exports = {
 	 * Methods
 	 */
 	methods: {
+        startNodeRed() {
 
+            // Create the settings object - see default settings.js file for other options
+            var settings = {
+                flowFile: 'flows.json',
+                userDir: path.join(__dirname, "flows"),
+                functionGlobalContext: {
+                    broker: this.broker
+                }    // enables global context
+            };
+
+            // Initialise the runtime with a server and settings
+            RED.init(null, settings);
+
+            // Start the runtime
+            RED.start();
+
+        },
+        stopNodeRed() {
+            RED.stop();
+        }
 	},
 
 	/**
@@ -59,27 +79,13 @@ module.exports = {
 	 * Service started lifecycle event handler
 	 */
 	async started() {
-
-        // Create the settings object - see default settings.js file for other options
-        var settings = {
-            flowFile: 'flows.json',
-            userDir: path.join(__dirname, "flows"),
-            functionGlobalContext: {
-                broker: this.broker
-            }    // enables global context
-        };
-
-        // Initialise the runtime with a server and settings
-        RED.init(null, settings);
-
-        // Start the runtime
-        RED.start();
+        this.startNodeRed();
 	},
 
 	/**
 	 * Service stopped lifecycle event handler
 	 */
 	async stopped() {
-
+        this.stopNodeRed();
 	}
 };

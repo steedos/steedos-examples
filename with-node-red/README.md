@@ -13,6 +13,8 @@ yarn
 yarn admin
 ```
 
+Open [http://localhost:1880](http://localhost:1880) with your browser to see the result.
+
 ### Start Node-Red Flows
 
 ```bash
@@ -26,8 +28,6 @@ yarn red
 yarn
 yarn start
 ```
-
-Open [http://localhost:1880](http://localhost:1880) with your browser to see the result.
 
 ## Learn More
 

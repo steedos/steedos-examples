@@ -27,7 +27,7 @@
         "id": "ce147b46c731d342",
         "type": "steedos-config",
         "name": "steedos",
-        "transporter": "redis://127.0.0.1:6379/1",
+        "transporter": "${TRANSPORTER}",
         "namespace": "steedos",
         "options": "{}",
         "optionsType": "json"

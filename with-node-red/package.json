@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start": "node-red -u flows"
+    "start": "TRANSPORTER=redis://127.0.0.1:6379/1 node-red -u flows"
   },
   "dependencies": {
     "node-red": "^3.0.2",

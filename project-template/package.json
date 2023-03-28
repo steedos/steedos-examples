@@ -22,7 +22,8 @@
     "package:start": "moleculer-runner steedos-app/package.service.js steedos-packages/*/package.service.js --hot"
   },
   "dependencies": {
-    "@steedos/service-community": "^2.4.5",
+    "@steedos/service-community": "^2.4.7",
+    "moleculer-repl": "^0.7.3",
     "nats": "^2.13.1"
   }
 }

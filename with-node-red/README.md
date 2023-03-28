@@ -4,7 +4,7 @@ This is a [Steedos](https://www.steedos.com/) project bootstrapped with [`create
 
 ### Start Steedos
 
-[Start Steedos](../project-template)
+Run [Project Template](../project-template) or your own project.
 
 ### Start Node-Red service
 
@@ -22,9 +22,3 @@ To learn more about Steedos Platform, take a look at the following resources:
 - [Steedos Documentation](https://www.steedos.com/docs) - learn about Steedos features and API.
 
 You can check out [the Steedos GitHub repository](https://github.com/steedos/steedos-platform/) - your feedback and contributions are welcome!
-
-## Deploy your project
-
-The easiest way to deploy your Steedos app is to use the [Docker Template](https://github.com/steedos/docker).
-
-Check out our [Steedos deployment documentation](https://www.steedos.com/docs/deploy/getting-started) for more details.

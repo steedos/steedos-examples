@@ -1,3 +1,5 @@
+require('dotenv-flow').config();
+
 /**
  * This is the default settings file provided by Node-RED.
  *
@@ -19,7 +21,6 @@
  *  - Node Settings
  *
  **/
- require('dotenv-flow').config();
 
  module.exports = {
 

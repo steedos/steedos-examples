@@ -45,7 +45,7 @@
         "id": "093de831c44358e0",
         "type": "inject",
         "z": "2276d6559d8cdc4c",
-        "name": "",
+        "name": "定时5秒",
         "props": [
             {
                 "p": "payload"
@@ -55,18 +55,18 @@
                 "vt": "str"
             }
         ],
-        "repeat": "",
+        "repeat": "5",
         "crontab": "",
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 110,
+        "x": 120,
         "y": 60,
         "wires": [
             [
-                "13c359c3e40772f7"
+                "7b0c5e3f1e731360"
             ]
         ]
     },
@@ -82,7 +82,7 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 340,
+        "x": 500,
         "y": 60,
         "wires": []
     },
@@ -231,6 +231,25 @@
         "x": 280,
         "y": 480,
         "wires": []
+    },
+    {
+        "id": "7b0c5e3f1e731360",
+        "type": "function",
+        "z": "2276d6559d8cdc4c",
+        "name": "function 1",
+        "func": "console.log(msg);\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 300,
+        "y": 60,
+        "wires": [
+            [
+                "13c359c3e40772f7"
+            ]
+        ]
     },
     {
         "id": "116d051551bd2fdd",

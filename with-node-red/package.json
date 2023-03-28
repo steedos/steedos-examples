@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start": "node-red -s settings.js -u flows"
+    "start": "node-red -s settings.js -u flows",
+    "headless": "node headless.js"
   },
   "dependencies": {
     "@steedos/node-red-contrib-steedos": "~2.0.2",

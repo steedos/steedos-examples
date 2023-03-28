@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "start": "moleculer-runner package.service.js -i 2",
-    "admin": "moleculer-runner admin.service.js",
+    "red": "node red",
+    "admin": "node red-admin",
     "repl": "moleculer-runner --repl"
   },
   "dependencies": {

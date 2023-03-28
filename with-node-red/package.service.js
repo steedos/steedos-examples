@@ -73,7 +73,7 @@ module.exports = {
             });
 
             child.on('close', function(code) {
-                this.broker.logger.info('process closed', code);
+                console.log('process closed', code);
                 // callback(scriptOutput,code);
             });
         },

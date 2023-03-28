@@ -17,6 +17,13 @@ yarn admin
 
 ```bash
 yarn
+yarn red
+```
+
+### Start Node-Red Flows with Steedos Package
+
+```bash
+yarn
 yarn start
 ```
 

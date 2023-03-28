@@ -237,7 +237,7 @@
         "type": "function",
         "z": "2276d6559d8cdc4c",
         "name": "function 1",
-        "func": "console.log(msg);\n\nreturn msg;",
+        "func": "console.log(global.get('broker').nodeID, msg);\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",

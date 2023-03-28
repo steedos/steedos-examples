@@ -1,15 +1,29 @@
 "use strict";
 const path = require('path');
 const RED = require("node-red");
+var http = require('http');
+var express = require("express");
+
 const project = require('./package.json');
 const packageName = project.name;
 // const packageLoader = require('@steedos/service-package-loader');
+
+
+// Create an Express app
+var app = express();
+
+// Add a simple route for static content served from 'public'
+app.use("/",express.static("public"));
+
+// Create a server
+var server = http.createServer(app);
+
 /**
  * @typedef {import('moleculer').Context} Context Moleculer's Context
  * 软件包服务启动后也需要抛出事件。
  */
 module.exports = {
-	name: packageName,
+	name: packageName + '-admin',
 	namespace: "steedos",
 	// mixins: [packageLoader],
 	/**
@@ -62,6 +76,8 @@ module.exports = {
 
         // Create the settings object - see default settings.js file for other options
         var settings = {
+			httpAdminRoot:"/",
+			httpNodeRoot: false,
             flowFile: 'flows.json',
             userDir: path.join(__dirname, "flows"),
             functionGlobalContext: {
@@ -70,7 +86,15 @@ module.exports = {
         };
 
         // Initialise the runtime with a server and settings
-        RED.init(null, settings);
+        RED.init(server, settings);
+
+		// Serve the editor UI from /red
+		app.use(settings.httpAdminRoot,RED.httpAdmin);
+
+		// Serve the http nodes UI from /api
+		app.use(settings.httpNodeRoot,RED.httpNode);
+
+		server.listen(1880);
 
         // Start the runtime
         RED.start();

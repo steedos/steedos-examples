@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start": "moleculer-runner package.service.js",
-    "dev": "node-red -s settings.js -u flows",
+    "start": "moleculer-runner package.service.js -i 2",
+    "admin": "moleculer-runner admin.service.js",
     "repl": "moleculer-runner --repl"
   },
   "dependencies": {

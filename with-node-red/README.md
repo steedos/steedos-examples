@@ -10,7 +10,7 @@ Run [Project Template](../project-template) or your own project.
 
 ```bash
 yarn
-yarn dev
+yarn admin
 ```
 
 ### Start Node-Red Flows

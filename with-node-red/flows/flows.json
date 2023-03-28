@@ -123,15 +123,16 @@
         "service": "5ab5acead56ffaea",
         "name": "GET /hello",
         "topic": "hello",
-        "rest": "{ method: \"GET\", path: \"/hello/:name\" }",
-        "restType": "str",
+        "rest": "{\"method\":\"GET\",\"path\":\"/hello/:name\"}",
+        "restType": "json",
         "params": "{}",
         "paramsType": "json",
         "x": 100,
         "y": 440,
         "wires": [
             [
-                "9f92b7a5dc3e810d"
+                "9f92b7a5dc3e810d",
+                "6c8286a229c502d6"
             ]
         ]
     },
@@ -140,17 +141,18 @@
         "type": "function",
         "z": "2276d6559d8cdc4c",
         "name": "function 1",
-        "func": "\nreturn msg;",
+        "func": "msg.payload = {data: 'Welcome ' + msg.payload.name};\nreturn msg",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 260,
+        "x": 280,
         "y": 440,
         "wires": [
             [
-                "42da4c18cc1a406e"
+                "42da4c18cc1a406e",
+                "d13cb3cbd8ac80ca"
             ]
         ]
     },
@@ -161,6 +163,38 @@
         "name": "",
         "x": 460,
         "y": 440,
+        "wires": []
+    },
+    {
+        "id": "d13cb3cbd8ac80ca",
+        "type": "debug",
+        "z": "2276d6559d8cdc4c",
+        "name": "debug 3",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 460,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "6c8286a229c502d6",
+        "type": "debug",
+        "z": "2276d6559d8cdc4c",
+        "name": "debug 4",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 280,
+        "y": 520,
         "wires": []
     }
 ]

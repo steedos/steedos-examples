@@ -3,10 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start": "TRANSPORTER=redis://127.0.0.1:6379/1 node-red -u flows"
+    "start": "node-red -s settings.js -u flows"
   },
   "dependencies": {
-    "node-red": "^3.0.2",
-    "@steedos/node-red-contrib-steedos": "~2.0.2"
+    "@steedos/node-red-contrib-steedos": "~2.0.2",
+    "dotenv-flow": "^3.2.0",
+    "node-red": "^3.0.2"
   }
 }

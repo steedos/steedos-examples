@@ -55,7 +55,7 @@
                 "vt": "str"
             }
         ],
-        "repeat": "5",
+        "repeat": "1",
         "crontab": "",
         "once": false,
         "onceDelay": 0.1,
@@ -144,7 +144,7 @@
         "type": "steedos-response-action",
         "z": "2276d6559d8cdc4c",
         "name": "",
-        "x": 460,
+        "x": 500,
         "y": 220,
         "wires": []
     },
@@ -211,7 +211,7 @@
         "type": "steedos-response-action",
         "z": "2276d6559d8cdc4c",
         "name": "",
-        "x": 460,
+        "x": 480,
         "y": 400,
         "wires": []
     },

@@ -6,7 +6,14 @@ This is a [Steedos](https://www.steedos.com/) project bootstrapped with [`create
 
 Run [Project Template](../project-template) or your own project.
 
-### Start Node-Red service
+### Start Node-Red Admin UI
+
+```bash
+yarn
+yarn dev
+```
+
+### Start Node-Red Flows
 
 ```bash
 yarn

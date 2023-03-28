@@ -3,12 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start": "node-red -s settings.js -u flows",
-    "headless": "node headless.js"
+    "start": "moleculer-runner package.service.js",
+    "dev": "node-red -s settings.js -u flows",
+    "repl": "moleculer-runner --repl"
   },
   "dependencies": {
     "@steedos/node-red-contrib-steedos": "~2.0.2",
     "dotenv-flow": "^3.2.0",
+    "moleculer": "^0.14.29",
+    "moleculer-repl": "^0.7.3",
     "node-red": "^3.0.2"
   }
 }

@@ -16,6 +16,6 @@ logs
 
 .env.local
 
-.flows.json.backup
+flows/*.backup
 
 flows/.config.*

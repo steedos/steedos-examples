@@ -16,4 +16,3 @@ logs
 .steedos
 
 yarn.lock
-pnpm-lock.yaml

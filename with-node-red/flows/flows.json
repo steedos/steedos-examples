@@ -19,7 +19,7 @@
     {
         "id": "5ab5acead56ffaea",
         "type": "steedos-service-config",
-        "name": "node-red",
+        "name": "example-node-red",
         "version": "",
         "settings": "{}",
         "rest": "",
@@ -113,6 +113,54 @@
         "statusType": "auto",
         "x": 420,
         "y": 320,
+        "wires": []
+    },
+    {
+        "id": "fda6f7448b07bc16",
+        "type": "steedos-request-action",
+        "z": "2276d6559d8cdc4c",
+        "broker": "ce147b46c731d342",
+        "service": "5ab5acead56ffaea",
+        "name": "GET /hello",
+        "topic": "hello",
+        "rest": "{ method: 'GET', path: '/hello/:name' }",
+        "restType": "str",
+        "params": "{}",
+        "paramsType": "json",
+        "x": 100,
+        "y": 440,
+        "wires": [
+            [
+                "9f92b7a5dc3e810d"
+            ]
+        ]
+    },
+    {
+        "id": "9f92b7a5dc3e810d",
+        "type": "function",
+        "z": "2276d6559d8cdc4c",
+        "name": "function 1",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 260,
+        "y": 440,
+        "wires": [
+            [
+                "42da4c18cc1a406e"
+            ]
+        ]
+    },
+    {
+        "id": "42da4c18cc1a406e",
+        "type": "steedos-response-action",
+        "z": "2276d6559d8cdc4c",
+        "name": "",
+        "x": 460,
+        "y": 440,
         "wires": []
     }
 ]

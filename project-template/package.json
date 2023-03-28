@@ -1,14 +1,28 @@
 {
-  "name": "project-template",
-  "version": "0.0.1",
+  "name": "my-app",
+  "version": "0.1.0",
   "private": true,
-  "workspaces": ["steedos-app"],
+  "workspaces": [
+    "moleculer-services/*",
+    "steedos-packages/*",
+    "steedos-app"
+  ],
   "scripts": {
-    "docker": "docker-compose up -d",
-    "docker:logs": "docker-compose logs -f",
-    "start": "steedos start"
+    "start": "steedos start",
+    "dev": "steedos start --hot",
+    "inspect": "NODE_OPTIONS=' --inspect' && steedos start",
+    "docker:steedos": "docker-compose -f docker-compose-steedos.yml up",
+    "docker:vscode": "docker-compose -f docker-compose-vscode.yml up",
+    "docker:db": "docker-compose -f docker-compose-db.yml up",
+    "source:config": "steedos source:config",
+    "source:retrieve": "steedos source:retrieve",
+    "source:deploy": "steedos source:deploy",
+    "service:repl": "moleculer-runner --repl",
+    "service:start": "moleculer-runner steedos-services/**/ --hot",
+    "package:start": "moleculer-runner steedos-app/package.service.js steedos-packages/*/package.service.js --hot"
   },
   "dependencies": {
-    "@steedos/service-community": "^2.2"
+    "@steedos/service-community": "^2.4.5",
+    "nats": "^2.13.1"
   }
 }

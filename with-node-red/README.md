@@ -2,11 +2,9 @@ This is a [Steedos](https://www.steedos.com/) project bootstrapped with [`create
 
 ## Getting Started
 
-### Start steedos & mongodb & redis service
+### Start Steedos
 
-```bash
-docker-compose up
-```
+[Start Steedos](../project-template)
 
 ### Start Node-Red service
 

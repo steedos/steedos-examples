@@ -1,0 +1,12 @@
+name: project_listview
+is_active: true
+label: 项目列表页（演示）
+object_name: project
+pageAssignments:
+  - type: orgDefault
+    page: project_listview
+    desktop: true
+    mobile: true
+render_engine: amis
+type: list
+widgets: []

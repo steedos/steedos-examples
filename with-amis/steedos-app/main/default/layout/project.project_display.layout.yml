@@ -1,0 +1,252 @@
+name: project_display
+buttons:
+  - button_name: standard_new
+  - button_name: standard_edit
+  - button_name: standard_delete
+  - button_name: standard_delete_many
+  - button_name: standard_approve
+  - button_name: standard_view_instance
+  - button_name: standard_query
+  - button_name: standard_import_data
+  - button_name: standard_submit_for_approval
+  - button_name: task
+field_groups:
+  - group_name: 系统信息
+  - group_name: 预算与执行
+  - group_name: 收款合同
+  - group_name: 付款合同
+  - group_name: 任务与问题
+  - group_name: 成本
+fields:
+  - field_name: name
+    is_readonly: false
+    is_required: true
+  - field_name: project_type
+    is_readonly: false
+    is_required: true
+  - field_name: status
+    is_readonly: false
+    is_required: true
+  - field_name: project_manager
+    is_readonly: false
+    is_required: true
+  - field_name: account
+    is_readonly: false
+    is_required: false
+  - field_name: project_program
+    is_readonly: false
+    is_required: false
+  - field_name: internal
+    is_readonly: false
+    is_required: false
+  - field_name: kickoff
+    is_readonly: false
+    is_required: false
+  - field_name: deadline
+    is_readonly: false
+    is_required: false
+  - field_name: closed
+    is_readonly: false
+    is_required: false
+  - field_name: project_code
+    is_readonly: true
+    is_required: false
+  - field_name: others
+    is_readonly: false
+    is_required: false
+  - field_name: description
+    is_readonly: false
+    is_required: false
+  - field_name: project_cost_budget
+    is_readonly: false
+    is_required: false
+    group: 预算与执行
+  - field_name: project_labor_budget
+    is_readonly: false
+    is_required: false
+    group: 预算与执行
+  - field_name: project_labor
+    is_readonly: false
+    is_required: false
+    group: 预算与执行
+  - field_name: project_labor_balance
+    is_readonly: false
+    is_required: false
+    group: 预算与执行
+  - field_name: contracts_all_income
+    is_readonly: true
+    is_required: false
+    group: 收款合同
+  - field_name: contracts_received_income
+    is_readonly: true
+    is_required: false
+    group: 收款合同
+  - field_name: contracts_waiting_income
+    is_readonly: true
+    is_required: false
+    group: 收款合同
+  - field_name: contracts_made_invoice
+    is_readonly: true
+    is_required: false
+    group: 收款合同
+  - field_name: contracts_all_pay
+    is_readonly: true
+    is_required: false
+    group: 付款合同
+  - field_name: contracts_paid_pay
+    is_readonly: true
+    is_required: false
+    group: 付款合同
+  - field_name: contracts_waiting_pay
+    is_readonly: true
+    is_required: false
+    group: 付款合同
+  - field_name: contracts_received_invoice
+    is_readonly: true
+    is_required: false
+    group: 付款合同
+  - field_name: daily_cost_budget
+    is_required: false
+    group: 费用报销
+  - field_name: daily_pay
+    group: 费用报销
+  - field_name: daily_pay_sum
+    group: 费用报销
+  - field_name: daily_sum
+    group: 费用报销
+  - field_name: business_cost_budget
+    is_required: false
+    group: 费用报销
+  - field_name: business_pay
+    group: 费用报销
+  - field_name: business_pay_sum
+    group: 费用报销
+  - field_name: business_sum
+    group: 费用报销
+  - field_name: open_tasks
+    is_readonly: false
+    is_required: false
+    group: 任务与问题
+  - field_name: open_issues
+    is_readonly: false
+    is_required: false
+    group: 任务与问题
+label: 项目基本页面布局
+object_name: project
+profiles:
+  - admin
+  - user
+related_lists:
+  - related_field_fullname: cms_files.parent
+    field_names:
+      - name
+      - size
+      - owner
+      - created
+      - modified
+  - related_field_fullname: contracts.project
+    field_names:
+      - name
+      - contract_type
+      - othercompany
+      - amount
+      - cash_flow_type
+      - is_valid
+      - contract_fulfillment_state
+      - signed_date
+      - owner
+      - created
+  - related_field_fullname: finance_receive.project
+    field_names:
+      - id
+      - account
+      - due_date
+      - amount
+      - contract_receipts_state
+      - receipt_date
+      - amount_description
+  - related_field_fullname: finance_payment.project
+    field_names:
+      - id
+      - supplier
+      - amount
+      - supplier_bank
+      - due_date
+      - payment_status
+      - payment_date
+      - amount_description
+  - related_field_fullname: cost_daily_expense_reimburse.project
+    field_names:
+      - name
+      - applicant
+      - created
+      - amount
+      - instance_state
+      - company
+      - department
+      - autonumber
+  - related_field_fullname: cost_business_out_reimburse.project
+    field_names:
+      - name
+      - applicant
+      - created
+      - amount
+      - instance_state
+      - company
+      - department
+      - autonumber
+  - related_field_fullname: cost_business_loan_reimburse.project
+    field_names:
+      - name
+      - applicant
+      - department
+      - amount
+      - type
+      - remark
+      - created
+  - related_field_fullname: project_milestone.project
+    field_names:
+      - name
+      - head_spaceuser
+      - has_collection
+      - completed
+      - project
+      - kickoff
+      - deadline
+      - completed_date
+  - related_field_fullname: project_task.project
+    field_names:
+      - name
+      - project
+      - assignees
+      - due_date
+      - priority
+      - completed
+      - state
+  - related_field_fullname: project_time.project_id
+    field_names:
+      - name
+      - project_id
+      - owner
+      - incurred_date
+      - hours
+      - description
+  - related_field_fullname: project_issue.project
+    field_names:
+      - name
+      - project
+      - type
+      - priority
+      - status
+      - assigned_to
+      - planned_resolution
+      - request_date
+      - requester
+  - related_field_fullname: instances.record_ids
+    field_names:
+      - name
+      - applicant
+      - applicant_organization
+      - modified
+      - state
+type: record

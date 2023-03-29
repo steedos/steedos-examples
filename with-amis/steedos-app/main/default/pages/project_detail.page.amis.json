@@ -1,0 +1,139 @@
+{
+    "type": "page",
+    "body": [
+        {
+            "type": "service",
+            "body": [
+                {
+                    "type": "steedos-record-detail-header",
+                    "label": "标题面板",
+                    "objectApiName": "${objectName}",
+                    "recordId": "${recordId}",
+                    "onEvent": {
+                        "recordLoaded": {
+                            "actions": [
+                                {
+                                    "actionType": "reload",
+                                    "data": {
+                                        "name": "${event.data.record.name}",
+                                        "record": "${event.data.record}",
+                                        "recordLoaded": true
+                                    }
+                                },
+                                {
+                                    "actionType": "reload",
+                                    "componentId": "page_readonly_project_header",
+                                    "data": {
+                                        "name": "${event.data.record.name}",
+                                        "record": "${event.data.record}",
+                                        "recordLoaded": true
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "id": "u:8556a46c414e"
+                },
+                {
+                    "type": "tabs",
+                    "className": "",
+                    "tabs": [
+                        {
+                            "title": "详细",
+                            "className": "px-0 py-4",
+                            "body": [
+                                {
+                                    "type": "steedos-object-form",
+                                    "label": "对象表单",
+                                    "objectApiName": "${objectName}",
+                                    "recordId": "${recordId}",
+                                    "appId": "${appId}",
+                                    "id": "u:6033b510db8f"
+                                }
+                            ],
+                            "id": "u:5d4e7e3f6ecc"
+                        },
+                        {
+                            "title": "里程碑",
+                            "body": [
+                                {
+                                    "type": "steedos-object-related-listview",
+                                    "label": "相关表",
+                                    "objectApiName": "${objectName}",
+                                    "recordId": "${recordId}",
+                                    "id": "u:b7945e22d9e7",
+                                    "relatedObjectApiName": "project_milestone"
+                                }
+                            ],
+                            "id": "u:f0014837b138"
+                        },
+                        {
+                            "title": "任务",
+                            "body": [
+                                {
+                                    "type": "steedos-object-related-listview",
+                                    "label": "相关表",
+                                    "objectApiName": "${objectName}",
+                                    "recordId": "${recordId}",
+                                    "id": "u:b7945e22d9e7",
+                                    "relatedObjectApiName": "project_task"
+                                }
+                            ],
+                            "id": "u:1f372dfc5623"
+                        },
+                        {
+                            "title": "所有相关表",
+                            "className": "px-0 pt-4",
+                            "body": [
+                                {
+                                    "type": "steedos-object-related-lists",
+                                    "label": "相关列表",
+                                    "objectApiName": "${objectName}",
+                                    "recordId": "${recordId}",
+                                    "appId": "${appId}",
+                                    "id": "u:0dd0414d291e"
+                                }
+                            ],
+                            "id": "u:3595f213c643"
+                        }
+                    ],
+                    "id": "u:f8776b36f040",
+                    "tabsMode": "vertical"
+                }
+            ],
+            "data": {
+                "_master.objectName": "${objectName}",
+                "_master.recordId": "${recordId}"
+            },
+            "onEvent": {
+                "recordLoaded": {
+                    "actions": [
+                        {
+                            "actionType": "reload",
+                            "data": {
+                                "name": "${record.name}",
+                                "_master.record": "${record}",
+                                "_master.objectName": "${objectName}",
+                                "_master.recordId": "${recordId}"
+                            }
+                        }
+                    ]
+                }
+            },
+            "id": "u:5d9f40c57df9"
+        }
+    ],
+    "regions": [
+        "body"
+    ],
+    "data": {
+        "objectName": "project",
+        "recordId": "62620e4d87e5c50032d9bd25",
+        "context": {
+            "rootUrl": "https://5000-peach-hippopotamus-wcyu2dvr.ws.vscode.steedos.cn"
+        }
+    },
+    "id": "page_project_record_detail",
+    "name": "page_project_record_detail",
+    "bodyClassName": ""
+}

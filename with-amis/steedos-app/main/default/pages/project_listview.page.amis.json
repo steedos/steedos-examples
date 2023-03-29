@@ -1,0 +1,92 @@
+{
+    "type": "page",
+    "body": [
+        {
+            "type": "steedos-object-listview",
+            "objectApiName": "project",
+            "columnsTogglable": false,
+            "showHeader": true,
+            "className": "sm:border bg-white sm:shadow sm:rounded border-slate-300 border-solid",
+            "id": "u:78ad468ffa3e"
+        },
+        {
+            "type": "divider",
+            "id": "u:17ebe088d5e8"
+        },
+        {
+            "type": "panel",
+            "title": "列表视图改造后效果",
+            "body": [
+                {
+                    "type": "steedos-object-table",
+                    "label": "对象表格",
+                    "objectApiName": "project",
+                    "fields": [
+                        "name",
+                        "project_code",
+                        "project_type",
+                        "status",
+                        "project_manager",
+                        "account",
+                        "project_program",
+                        "kickoff",
+                        "deadline",
+                        "open_tasks",
+                        "open_issues",
+                        "internal",
+                        "closed",
+                        "others",
+                        "description",
+                        "instance_state",
+                        "business_cost_budget",
+                        "business_pay",
+                        "daily_cost_budget",
+                        "daily_pay",
+                        "contracts_received_invoice",
+                        "contracts_waiting_pay",
+                        "contracts_paid_pay",
+                        "contracts_all_pay",
+                        "contracts_made_invoice",
+                        "contracts_waiting_income",
+                        "project_labor_balance",
+                        "contracts_received_income",
+                        "project_labor",
+                        "contracts_all_income",
+                        "project_labor_budget",
+                        "project_cost_budget"
+                    ],
+                    "className": "sm:border sm:shadow sm:rounded sm:border-gray-300",
+                    "id": "u:2c7c73937911",
+                    "fieldsExtend": "{\n  \"name\": {\n    \"amis\": {\n      \"fixed\": \"left\",\n      \"popOver\": {\n        \"trigger\": \"hover\",\n        \"showIcon\": false,\n        \"body\": \"项目简述：<%= data.description %>\",\n        \"popOverClassName\": \"min-w-0\",\n        \"position\": \"left-center-right-center right-center-left-center\"\n      }\n    }\n  },\n  \"status\": {\n    \"amis\": {\n      \"fixed\": \"right\"\n    }\n  },\n  \"open_issues\": {\n    \"amis\": {\n      \"classNameExpr\": \"<%= data.open_issues > 5 ? 'bg-danger' : '' %>\"\n    }\n  }\n}"
+                }
+            ],
+            "id": "u:058f97e08165",
+            "affixFooter": false,
+            "className": "Panel--primary",
+            "headerClassName": "",
+            "bodyClassName": "no-border",
+            "actionsClassName": "no-border"
+        }
+    ],
+    "regions": [
+        "body"
+    ],
+    "data": {
+        "objectName": "project",
+        "context": {
+            "rootUrl": "https://5000-peach-hippopotamus-wcyu2dvr.ws.vscode.steedos.cn"
+        }
+    },
+    "name": "page_project_list",
+    "bodyClassName": "",
+    "id": "u:b4dfa5bef8ed",
+    "asideResizor": false,
+    "pullRefresh": {
+        "disabled": true
+    },
+    "headerClassName": "",
+    "style": {
+        "fontFamily": "",
+        "fontSize": 12
+    }
+}

@@ -1,0 +1,70 @@
+name: task
+amis_schema: |-
+  {
+      "type": "service",
+      "body": [
+          {
+              "type": "button",
+              "label": "新建任务（演示）",
+              "id": "u:project_task",
+              "onEvent": {
+                  "click": {
+                      "weight": 0,
+                      "actions": [
+                          {
+                              "dialog": {
+                                  "type": "dialog",
+                                  "title": "项目任务新建（演示）",
+                                  "body": [
+                                      {
+                                          "type": "steedos-object-form",
+                                          "label": "对象表单",
+                                          "objectApiName": "project_task",
+                                          "recordId": "",
+                                          "className": "sm:border sm:shadow sm:rounded sm:border-gray-300 bg-white p-4",
+                                          "id": "u:2bcfdd75a998",
+                                          "mode": "edit",
+                                          "fieldsExtend": "{\n  \"name\": {\n    \"is_wide\": true,\n    \"amis\": {\n      \"desc\": \"<span class=\\\"text-danger\\\">请填写任务名称</span>\"\n    }\n  },\n  \"description\": {\n    \"amis\": {\n      \"placeholder\": \"请填写任务简述\"\n    }\n  },\n  \"priority\": {\n    \"is_wide\": true,\n    \"amis\": {\n      \"value\": \"high\",\n      \"type\": \"radios\"\n    }\n  },\n  \"state\": {\n    \"amis\": {\n      \"type\": \"radios\"\n    }\n  },\n  \"due_date\": {\n    \"amis\": {\n      \"hiddenOn\": \"data.priority == 'low'\",\n      \"requiredOn\": \"data.priority == 'high'\"\n    }\n  }\n}",
+                                          "defaultData": {
+                                              "project": "${record_id}"
+                                          }
+                                      }
+                                  ],
+                                  "showCloseButton": true,
+                                  "showErrorMsg": true,
+                                  "showLoading": true,
+                                  "id": "u:7cee846f4189",
+                                  "size": "lg",
+                                  "closeOnEsc": false,
+                                  "dataMapSwitch": false
+                              },
+                              "actionType": "dialog"
+                          }
+                      ]
+                  }
+              }
+          }
+      ],
+      "regions": [
+          "body"
+      ],
+      "data": {
+          "context": {
+              "rootUrl": "https://5000-peach-hippopotamus-wcyu2dvr.ws.vscode.steedos.cn"
+          },
+          "app_id": "",
+          "tab_id": "",
+          "object_name": "",
+          "dataComponentId": "",
+          "record_id": "",
+          "record": {},
+          "permissions": {}
+      },
+      "bodyClassName": "p-0",
+      "id": "u:e6988ababc56"
+  }
+is_enable: true
+label: 新建任务（演示）
+'on': record_only
+type: amis_button
+visible: true

@@ -1,0 +1,9 @@
+name: projects_home
+__filename: >-
+  /workspace/steedos-project-template/.steedos/node_modules/@steedos-labs/project/main/default/pages/projects_home.page.yml
+is_active: true
+label: 项目首页（演示）
+pageAssignments: []
+render_engine: amis
+type: app
+widgets: []

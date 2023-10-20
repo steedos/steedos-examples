@@ -1,0 +1,35 @@
+version: "3.9"
+
+services:
+
+  # Steedos Platform
+  steedos:
+    image: steedos/steedos-enterprise:latest
+    container_name: steedos-enterprise
+    ports:
+      - "80:80"   
+      - "443:443"
+      - "9001:9001"
+    environment:
+      - ROOT_URL=http://127.0.0.1
+      - STEEDOS_LICENSE=trial
+    tty: true
+    volumes:
+      - "./storage:/steedos-storage"
+    
+  oceanbase:
+    image: oceanbase/oceanbase-ce
+    ports: 
+      - "2881:2881"
+    environment:
+      - MINI_MODE=1
+    restart: "always"
+
+
+# volumes:
+#   steedos-packages:
+#     driver: local
+#   steedos-data:
+#     driver: local
+#   steedos-mongodb-data:
+#     driver: local

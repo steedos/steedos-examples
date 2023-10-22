@@ -16,6 +16,8 @@ services:
     tty: true
     volumes:
       - "./storage:/steedos-storage"
+    depends_on:
+     - oceanbase
     
   oceanbase:
     image: oceanbase/oceanbase-ce

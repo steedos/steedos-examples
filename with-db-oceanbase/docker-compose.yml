@@ -17,19 +17,27 @@ services:
     volumes:
       - "./storage:/steedos-storage"
     depends_on:
-     - oceanbase
+      oceanbase:
+        condition: service_healthy
+
     
   oceanbase:
     image: oceanbase/oceanbase-ce
+    healthcheck:
+      test: ["CMD", "ob-mysql", "root"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
     ports: 
       - "2881:2881"
+    volumes:
+      - "./scripts:/root/scripts"
     environment:
       - MINI_MODE=1
-    restart: "always"
 
 
 # volumes:
-#   steedos-packages:
+#   oceanbase-data:
 #     driver: local
 #   steedos-data:
 #     driver: local

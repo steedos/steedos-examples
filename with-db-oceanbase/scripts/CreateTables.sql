@@ -62,7 +62,8 @@ CREATE TABLE `TestSortForDM`(
 
 /****** Object:  Table `Product` ******/
 CREATE TABLE `Product`(
-	`name` varchar(50) NOT NULL PRIMARY KEY,
+	`_id` varchar(50) NOT NULL PRIMARY KEY,
+	`name` varchar(50) NULL,
 	`author` varchar(50) NULL,
 	`publisher` varchar(50) NULL,
 	`publishtime` date NULL,
@@ -79,6 +80,3 @@ CREATE TABLE `Product`(
 	`sellstarttime` date NULL,
 	`sellendtime` date NULL
 );
-
-/****** Exit ******/
-exit;

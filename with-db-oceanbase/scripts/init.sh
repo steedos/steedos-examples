@@ -4,7 +4,7 @@
 
 echo; echo "=> Starting ...";
 
-docker exec -it with-db-oceanbase_oceanbase_1 bash -c '/root/scripts/CreateTables.sql';
+docker exec -it with-db-oceanbase-oceanbase-1 bash -c 'obclient -h127.1 -uroot@test -A -Dtest -P2881 -e "source /root/scripts/CreateTables.sql"';
 
 exit;
 
